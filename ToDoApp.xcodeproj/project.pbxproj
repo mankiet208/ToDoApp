@@ -34,12 +34,6 @@
 		393DE3412CE6F13C0038F2B9 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE2FF2CE6F13B0038F2B9 /* BaseVM.swift */; };
 		393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3002CE6F13B0038F2B9 /* BaseTabItem.swift */; };
 		393DE3432CE6F13C0038F2B9 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3012CE6F13B0038F2B9 /* BaseView.swift */; };
-		393DE3442CE6F13C0038F2B9 /* NetworkMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3032CE6F13B0038F2B9 /* NetworkMethod.swift */; };
-		393DE3452CE6F13C0038F2B9 /* NetworkEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3042CE6F13B0038F2B9 /* NetworkEnvironment.swift */; };
-		393DE3462CE6F13C0038F2B9 /* NetworkRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3052CE6F13B0038F2B9 /* NetworkRoute.swift */; };
-		393DE3472CE6F13C0038F2B9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3062CE6F13B0038F2B9 /* Network.swift */; };
-		393DE3482CE6F13C0038F2B9 /* ToDoRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3082CE6F13B0038F2B9 /* ToDoRoute.swift */; };
-		393DE3492CE6F13C0038F2B9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3092CE6F13B0038F2B9 /* NetworkError.swift */; };
 		393DE34A2CE6F13C0038F2B9 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE30B2CE6F13B0038F2B9 /* UserRepository.swift */; };
 		393DE34B2CE6F13C0038F2B9 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE30C2CE6F13B0038F2B9 /* TodoRepository.swift */; };
 		393DE34C2CE6F13C0038F2B9 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE30E2CE6F13B0038F2B9 /* LoginVM.swift */; };
@@ -103,12 +97,6 @@
 		393DE2FF2CE6F13B0038F2B9 /* BaseVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVM.swift; sourceTree = "<group>"; };
 		393DE3002CE6F13B0038F2B9 /* BaseTabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabItem.swift; sourceTree = "<group>"; };
 		393DE3012CE6F13B0038F2B9 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		393DE3032CE6F13B0038F2B9 /* NetworkMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMethod.swift; sourceTree = "<group>"; };
-		393DE3042CE6F13B0038F2B9 /* NetworkEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEnvironment.swift; sourceTree = "<group>"; };
-		393DE3052CE6F13B0038F2B9 /* NetworkRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRoute.swift; sourceTree = "<group>"; };
-		393DE3062CE6F13B0038F2B9 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		393DE3082CE6F13B0038F2B9 /* ToDoRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoRoute.swift; sourceTree = "<group>"; };
-		393DE3092CE6F13B0038F2B9 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		393DE30B2CE6F13B0038F2B9 /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		393DE30C2CE6F13B0038F2B9 /* TodoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		393DE30E2CE6F13B0038F2B9 /* LoginVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
@@ -180,9 +168,8 @@
 				393DE2E62CE6F13B0038F2B9 /* Extensions */,
 				393DE3192CE6F13B0038F2B9 /* Helper */,
 				393DE3142CE6F13B0038F2B9 /* Models */,
-				393DE3022CE6F13B0038F2B9 /* Network */,
-				393DE30A2CE6F13B0038F2B9 /* Repositories */,
 				39922AE22CE745E30009ECC1 /* Services */,
+				393DE30A2CE6F13B0038F2B9 /* Repositories */,
 				393DE2EC2CE6F13B0038F2B9 /* Views */,
 				393DE2DE2CE6F0FC0038F2B9 /* Preview Content */,
 			);
@@ -249,27 +236,6 @@
 				393DE3012CE6F13B0038F2B9 /* BaseView.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		393DE3022CE6F13B0038F2B9 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				393DE3032CE6F13B0038F2B9 /* NetworkMethod.swift */,
-				393DE3042CE6F13B0038F2B9 /* NetworkEnvironment.swift */,
-				393DE3052CE6F13B0038F2B9 /* NetworkRoute.swift */,
-				393DE3062CE6F13B0038F2B9 /* Network.swift */,
-				393DE3072CE6F13B0038F2B9 /* Todo */,
-				393DE3092CE6F13B0038F2B9 /* NetworkError.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		393DE3072CE6F13B0038F2B9 /* Todo */ = {
-			isa = PBXGroup;
-			children = (
-				393DE3082CE6F13B0038F2B9 /* ToDoRoute.swift */,
-			);
-			path = Todo;
 			sourceTree = "<group>";
 		};
 		393DE30A2CE6F13B0038F2B9 /* Repositories */ = {
@@ -525,7 +491,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				393DE3312CE6F13C0038F2B9 /* ProfileView.swift in Sources */,
-				393DE3492CE6F13C0038F2B9 /* NetworkError.swift in Sources */,
 				393DE34F2CE6F13C0038F2B9 /* MainVM.swift in Sources */,
 				393DE3432CE6F13C0038F2B9 /* BaseView.swift in Sources */,
 				393DE33E2CE6F13C0038F2B9 /* MainView.swift in Sources */,
@@ -538,7 +503,6 @@
 				393DE3402CE6F13C0038F2B9 /* BaseNavigation.swift in Sources */,
 				393DE3562CE6F13C0038F2B9 /* FirebaseManager.swift in Sources */,
 				393DE34A2CE6F13C0038F2B9 /* UserRepository.swift in Sources */,
-				393DE3452CE6F13C0038F2B9 /* NetworkEnvironment.swift in Sources */,
 				39922AEE2CE748680009ECC1 /* TodoServiceFirestore.swift in Sources */,
 				393DE3322CE6F13C0038F2B9 /* LoginView.swift in Sources */,
 				393DE3542CE6F13C0038F2B9 /* Resource.swift in Sources */,
@@ -560,22 +524,18 @@
 				393DE3342CE6F13C0038F2B9 /* NewItemView.swift in Sources */,
 				393DE33A2CE6F13C0038F2B9 /* SecureTextField.swift in Sources */,
 				393DE33B2CE6F13C0038F2B9 /* Banner.swift in Sources */,
-				393DE3472CE6F13C0038F2B9 /* Network.swift in Sources */,
 				393DE3362CE6F13C0038F2B9 /* AppButton.swift in Sources */,
 				39922AE42CE746B70009ECC1 /* UserService.swift in Sources */,
 				393DE2D92CE6F0FB0038F2B9 /* ToDoAppApp.swift in Sources */,
 				393DE34B2CE6F13C0038F2B9 /* TodoRepository.swift in Sources */,
 				393DE3392CE6F13C0038F2B9 /* SpacingView.swift in Sources */,
-				393DE3462CE6F13C0038F2B9 /* NetworkRoute.swift in Sources */,
 				393DE3552CE6F13C0038F2B9 /* ErrorWrapper.swift in Sources */,
-				393DE3482CE6F13C0038F2B9 /* ToDoRoute.swift in Sources */,
 				393DE3352CE6F13C0038F2B9 /* AppLabel.swift in Sources */,
 				39922AEB2CE747A20009ECC1 /* UserServiceLocal.swift in Sources */,
 				393DE3622CE6F13C0038F2B9 /* DI.swift in Sources */,
 				393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */,
 				393DE32D2CE6F13C0038F2B9 /* ColorExtension.swift in Sources */,
 				393DE34D2CE6F13C0038F2B9 /* NewItemVM.swift in Sources */,
-				393DE3442CE6F13C0038F2B9 /* NetworkMethod.swift in Sources */,
 				393DE3372CE6F13C0038F2B9 /* HeaderView.swift in Sources */,
 				39922AE92CE747330009ECC1 /* UserServiceFirestore.swift in Sources */,
 			);
