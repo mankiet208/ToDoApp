@@ -1,0 +1,11 @@
+//
+//  Development.xcconfig
+//  SwiftUITemplate
+//
+//  Created by Kiet Truong on 05/07/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = api.development.com
