@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct ToDoItem: Codable, Identifiable, Hashable {
-    let id: String
+struct ToDoItem: FirestoreIdentifiable {
+    var id: String    
     let title: String
     let dueDate: TimeInterval
     let createDate: TimeInterval
@@ -32,6 +32,17 @@ struct ToDoItem: Codable, Identifiable, Hashable {
         dueDate = data["dueDate"] as? TimeInterval ?? 0
         createDate = data["createDate"] as? TimeInterval ?? 0
         isDone = data["isDone"] as? Bool ?? false
+    }
+    
+    
+    static func parse(data: [String : Any]) -> ToDoItem {
+        return ToDoItem(
+            id: data["id"] as? String ?? "",
+            title: data["title"] as? String ?? "",
+            dueDate: data["dueDate"] as? TimeInterval ?? 0,
+            createDate: data["createDate"] as? TimeInterval ?? 0,
+            isDone: data["isDone"] as? Bool ?? false
+        )
     }
 }
 

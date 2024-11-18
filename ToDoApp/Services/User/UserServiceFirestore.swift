@@ -11,43 +11,31 @@ import FirebaseFirestore
 
 struct UserServiceFirestore: UserService {
     
-    func getUser(uid: String) async -> Result<User?, Error> {
-        do {
-            let documentRef = Firestore.firestore()
-                .collection("users")
-                .document(uid)
-            let document = try await documentRef.getDocument()
-            
-            guard let data = document.data() else {
-                return .success(nil)
-            }
-            
-            return .success(User(data: data))
-        } catch {
-            return .failure(error)
-        }
+    func getUserId() -> String? {
+        return FirebaseAuthManager.shared.getUserId()
+    }
+    
+    func getUser(uid: String) async throws -> User? {        
+        return try await FirestoreService.requestOne(
+            UserFirestoreEndpoint.getUser(uid: uid)
+        )
     }
     
     func setUser(uid: String, user: User) async throws {
-        let documentRef = Firestore.firestore().collection("users").document(uid)
-        try await documentRef.setData(user.toDict())
+        try await FirestoreService.request(
+            UserFirestoreEndpoint.setUser(uid: uid, user: user)
+        )
     }
     
     func createUser(email: String, password: String) async throws -> String? {
-        let result = try await Auth.auth().createUser(withEmail: email, password: password)
-        return result.user.uid
+        return try await FirebaseAuthManager.shared.createUser(email: email, password: password)
     }
     
     func signIn(email: String, password: String) async throws {
-        try await Auth.auth().signIn(withEmail: email, password: password)
+        try await FirebaseAuthManager.shared.signIn(email: email, password: password)
     }
     
-    func signOut() -> Result<Void, Error> {
-        do {
-            try Auth.auth().signOut()
-            return .success(())
-        } catch {
-            return .failure(error)
-        }
+    func signOut() throws {
+        try FirebaseAuthManager.shared.signOut()
     }
 }

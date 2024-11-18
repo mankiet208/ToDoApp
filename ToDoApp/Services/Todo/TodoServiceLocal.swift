@@ -9,11 +9,7 @@ import Foundation
 
 struct ToDoServiceLocal: ToDoService {
     
-    func markAsDone(uid: String, toDoId: String, isDone: Bool) async -> Result<Void, Error> {
-        return .success(())
-    }
+    func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws {}
     
-    func addNewToDo(uid: String, todo: ToDoItem) async -> Result<Void, Error> {
-        return .success(())
-    }
+    func addNewToDo(uid: String, todo: ToDoItem) async throws {}
 }

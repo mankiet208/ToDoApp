@@ -11,7 +11,7 @@ import FirebaseFirestore
 struct ToDoServiceFirestore: ToDoService {
     
     func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration? {
-        guard let uid = FirebaseManager.shared.getUserId() else {
+        guard let uid = FirebaseAuthManager.shared.getUserId() else {
             return nil
         }
         let collectionRef = Firestore.firestore()
@@ -42,31 +42,15 @@ struct ToDoServiceFirestore: ToDoService {
         return listener
     }
     
-    func markAsDone(uid: String, toDoId: String, isDone: Bool) async -> Result<Void, Error> {
-        do {
-            let documentRef = Firestore.firestore()
-                .collection("users")
-                .document(uid)
-                .collection("todos")
-                .document(toDoId)
-            try await documentRef.setData(["isDone": isDone], merge: true)
-            return .success(())
-        } catch {
-            return .failure(error)
-        }
+    func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws {
+        try await FirestoreService.request(
+            ToDoFirestoreEndpoint.markAsDone(uid: uid, toDoId: toDoId, isDone: isDone)
+        )
     }
     
-    func addNewToDo(uid: String, todo: ToDoItem) async -> Result<Void, Error> {
-        do {
-            let documentRef = Firestore.firestore()
-                .collection("users")
-                .document(uid)
-                .collection("todos")
-                .document(todo.id)
-            try await documentRef.setData(todo.toDict())
-            return .success(())
-        } catch {
-            return .failure(error)
-        }
+    func addNewToDo(uid: String, todo: ToDoItem) async throws {
+        try await FirestoreService.request(
+            ToDoFirestoreEndpoint.addNewToDo(uid: uid, toDo: todo)
+        )
     }
 }

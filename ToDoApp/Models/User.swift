@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct User: Identifiable, Codable {
+struct User: FirestoreIdentifiable {
     enum ValidationError: Error {
         case emptyField
         case invalidEmail
     }
     
-    let id: String
+    var id: String
     let name: String
     let email: String
     let createdAt: TimeInterval
@@ -25,10 +25,12 @@ struct User: Identifiable, Codable {
         self.createdAt = createdAt
     }
     
-    init(data: [String: Any]) {
-        id = data["id"] as? String ?? ""
-        name = data["name"] as? String ?? ""
-        email = data["email"] as? String ?? ""
-        createdAt = data["createDate"] as? TimeInterval ?? 0
+    static func parse(data: [String : Any]) -> User {
+        return User(
+            id: data["id"] as? String ?? "",
+            name: data["name"] as? String ?? "",
+            email: data["email"] as? String ?? "",
+            createdAt: data["createDate"] as? TimeInterval ?? 0
+        )
     }
 }

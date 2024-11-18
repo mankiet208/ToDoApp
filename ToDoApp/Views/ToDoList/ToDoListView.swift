@@ -11,9 +11,15 @@ struct ToDoListView: View {
     @ObservedObject var viewModel: ToDoListVM
 
     static func createInstance(userId: String) -> ToDoListView {
+        let userService = UserServiceFirestore()
+        let userRepo = UserRepositoryImp(service: userService)
         let toDoService = ToDoServiceFirestore()
         let toDoRepo = ToDoRepositoryImp(service: toDoService)
-        let toDoListVM = ToDoListVM(userId: userId, toDoRepository: toDoRepo)
+        let toDoListVM = ToDoListVM(
+            userId: userId,
+            userRepository: userRepo,
+            toDoRepository: toDoRepo
+        )
         return ToDoListView(viewModel: toDoListVM)
     }
 

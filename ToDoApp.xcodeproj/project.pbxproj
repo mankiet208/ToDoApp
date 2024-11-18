@@ -46,7 +46,7 @@
 		393DE3532CE6F13C0038F2B9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3162CE6F13B0038F2B9 /* User.swift */; };
 		393DE3542CE6F13C0038F2B9 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3172CE6F13B0038F2B9 /* Resource.swift */; };
 		393DE3552CE6F13C0038F2B9 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3182CE6F13B0038F2B9 /* ErrorWrapper.swift */; };
-		393DE3562CE6F13C0038F2B9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE31A2CE6F13B0038F2B9 /* FirebaseManager.swift */; };
+		393DE3562CE6F13C0038F2B9 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */; };
 		393DE3572CE6F13C0038F2B9 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31C2CE6F13B0038F2B9 /* Development.xcconfig */; };
 		393DE3582CE6F13C0038F2B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31D2CE6F13B0038F2B9 /* GoogleService-Info.plist */; };
 		393DE3592CE6F13C0038F2B9 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31E2CE6F13B0038F2B9 /* Production.xcconfig */; };
@@ -58,6 +58,13 @@
 		393DE3602CE6F13C0038F2B9 /* DIType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3292CE6F13C0038F2B9 /* DIType.swift */; };
 		393DE3612CE6F13C0038F2B9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE32A2CE6F13C0038F2B9 /* DIContainer.swift */; };
 		393DE3622CE6F13C0038F2B9 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE32B2CE6F13C0038F2B9 /* DI.swift */; };
+		396BFC412CEB23EC003A7CB6 /* FirestoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC402CEB23EB003A7CB6 /* FirestoreProtocol.swift */; };
+		396BFC432CEB242E003A7CB6 /* FirestoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC422CEB242E003A7CB6 /* FirestoreEndpoint.swift */; };
+		396BFC452CEB248D003A7CB6 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC442CEB248D003A7CB6 /* FirestoreService.swift */; };
+		396BFC472CEB252A003A7CB6 /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC462CEB252A003A7CB6 /* FirestoreError.swift */; };
+		396BFC492CEB2852003A7CB6 /* FirestoreMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */; };
+		396BFC4C2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC4B2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift */; };
+		396BFC4E2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */; };
 		39922ADF2CE741F40009ECC1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 39922ADE2CE741F40009ECC1 /* FirebaseAuth */; };
 		39922AE12CE741F40009ECC1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 39922AE02CE741F40009ECC1 /* FirebaseFirestore */; };
 		39922AE42CE746B70009ECC1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE32CE746B70009ECC1 /* UserService.swift */; };
@@ -109,7 +116,7 @@
 		393DE3162CE6F13B0038F2B9 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		393DE3172CE6F13B0038F2B9 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		393DE3182CE6F13B0038F2B9 /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
-		393DE31A2CE6F13B0038F2B9 /* FirebaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		393DE31C2CE6F13B0038F2B9 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		393DE31D2CE6F13B0038F2B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		393DE31E2CE6F13B0038F2B9 /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -121,6 +128,13 @@
 		393DE3292CE6F13C0038F2B9 /* DIType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIType.swift; sourceTree = "<group>"; };
 		393DE32A2CE6F13C0038F2B9 /* DIContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 		393DE32B2CE6F13C0038F2B9 /* DI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		396BFC402CEB23EB003A7CB6 /* FirestoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreProtocol.swift; sourceTree = "<group>"; };
+		396BFC422CEB242E003A7CB6 /* FirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreEndpoint.swift; sourceTree = "<group>"; };
+		396BFC442CEB248D003A7CB6 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		396BFC462CEB252A003A7CB6 /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
+		396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMethod.swift; sourceTree = "<group>"; };
+		396BFC4B2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirestoreEndpoint.swift; sourceTree = "<group>"; };
+		396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFirestoreEndpoint.swift; sourceTree = "<group>"; };
 		39922AE32CE746B70009ECC1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		39922AE52CE746C50009ECC1 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceFirestore.swift; sourceTree = "<group>"; };
@@ -166,6 +180,7 @@
 				393DE3202CE6F13B0038F2B9 /* Resources */,
 				393DE31B2CE6F13B0038F2B9 /* Configs */,
 				393DE2E62CE6F13B0038F2B9 /* Extensions */,
+				396BFC3E2CEB2325003A7CB6 /* Data */,
 				393DE3192CE6F13B0038F2B9 /* Helper */,
 				393DE3142CE6F13B0038F2B9 /* Models */,
 				39922AE22CE745E30009ECC1 /* Services */,
@@ -262,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				393DE3282CE6F13C0038F2B9 /* DI */,
-				393DE31A2CE6F13B0038F2B9 /* FirebaseManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -313,6 +327,37 @@
 				393DE32B2CE6F13C0038F2B9 /* DI.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		396BFC3E2CEB2325003A7CB6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */,
+				396BFC3F2CEB2339003A7CB6 /* Firestore */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		396BFC3F2CEB2339003A7CB6 /* Firestore */ = {
+			isa = PBXGroup;
+			children = (
+				396BFC4A2CEB415D003A7CB6 /* Endpoint */,
+				396BFC402CEB23EB003A7CB6 /* FirestoreProtocol.swift */,
+				396BFC442CEB248D003A7CB6 /* FirestoreService.swift */,
+				396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */,
+				396BFC462CEB252A003A7CB6 /* FirestoreError.swift */,
+			);
+			path = Firestore;
+			sourceTree = "<group>";
+		};
+		396BFC4A2CEB415D003A7CB6 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				396BFC422CEB242E003A7CB6 /* FirestoreEndpoint.swift */,
+				396BFC4B2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift */,
+				396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		39922AE22CE745E30009ECC1 /* Services */ = {
@@ -490,6 +535,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396BFC492CEB2852003A7CB6 /* FirestoreMethod.swift in Sources */,
 				393DE3312CE6F13C0038F2B9 /* ProfileView.swift in Sources */,
 				393DE34F2CE6F13C0038F2B9 /* MainVM.swift in Sources */,
 				393DE3432CE6F13C0038F2B9 /* BaseView.swift in Sources */,
@@ -498,10 +544,12 @@
 				393DE33F2CE6F13C0038F2B9 /* LoadingView.swift in Sources */,
 				393DE32C2CE6F13C0038F2B9 /* FontExtension.swift in Sources */,
 				393DE3412CE6F13C0038F2B9 /* BaseVM.swift in Sources */,
+				396BFC4C2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift in Sources */,
+				396BFC472CEB252A003A7CB6 /* FirestoreError.swift in Sources */,
 				393DE33C2CE6F13C0038F2B9 /* ToDoListView.swift in Sources */,
 				393DE3602CE6F13C0038F2B9 /* DIType.swift in Sources */,
 				393DE3402CE6F13C0038F2B9 /* BaseNavigation.swift in Sources */,
-				393DE3562CE6F13C0038F2B9 /* FirebaseManager.swift in Sources */,
+				393DE3562CE6F13C0038F2B9 /* FirebaseAuthManager.swift in Sources */,
 				393DE34A2CE6F13C0038F2B9 /* UserRepository.swift in Sources */,
 				39922AEE2CE748680009ECC1 /* TodoServiceFirestore.swift in Sources */,
 				393DE3322CE6F13C0038F2B9 /* LoginView.swift in Sources */,
@@ -518,7 +566,9 @@
 				393DE3532CE6F13C0038F2B9 /* User.swift in Sources */,
 				393DE3522CE6F13C0038F2B9 /* ToDoItem.swift in Sources */,
 				393DE3382CE6F13C0038F2B9 /* ToDoItemView.swift in Sources */,
+				396BFC432CEB242E003A7CB6 /* FirestoreEndpoint.swift in Sources */,
 				393DE3512CE6F13C0038F2B9 /* ProfileVM.swift in Sources */,
+				396BFC452CEB248D003A7CB6 /* FirestoreService.swift in Sources */,
 				393DE32E2CE6F13C0038F2B9 /* StringExtension.swift in Sources */,
 				393DE34C2CE6F13C0038F2B9 /* LoginVM.swift in Sources */,
 				393DE3342CE6F13C0038F2B9 /* NewItemView.swift in Sources */,
@@ -531,6 +581,8 @@
 				393DE3392CE6F13C0038F2B9 /* SpacingView.swift in Sources */,
 				393DE3552CE6F13C0038F2B9 /* ErrorWrapper.swift in Sources */,
 				393DE3352CE6F13C0038F2B9 /* AppLabel.swift in Sources */,
+				396BFC412CEB23EC003A7CB6 /* FirestoreProtocol.swift in Sources */,
+				396BFC4E2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift in Sources */,
 				39922AEB2CE747A20009ECC1 /* UserServiceLocal.swift in Sources */,
 				393DE3622CE6F13C0038F2B9 /* DI.swift in Sources */,
 				393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */,

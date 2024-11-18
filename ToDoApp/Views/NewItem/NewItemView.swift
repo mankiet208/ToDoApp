@@ -12,9 +12,14 @@ struct NewItemView: View {
     @Binding var isPresented: Bool
     
     static func createInstance(isPresented: Binding<Bool>) -> NewItemView {
+        let userService = UserServiceFirestore()
+        let userRepo = UserRepositoryImp(service: userService)
         let toDoService = ToDoServiceFirestore()
         let toDoRepo = ToDoRepositoryImp(service: toDoService)
-        let newItemVM = NewItemVM(toDoRepository: toDoRepo)
+        let newItemVM = NewItemVM(
+            userRepository: userRepo,
+            toDoRepository: toDoRepo
+        )
         return NewItemView(viewModel: newItemVM, isPresented: isPresented)
     }
     

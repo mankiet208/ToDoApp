@@ -14,9 +14,11 @@ class NewItemVM: BaseVM {
     @Published var dueDate = Date()
     @MainActor @Published var showAlert = false
     
+    private let userRepository: UserRepository
     private let toDoRepository: ToDoRepository
     
-    init(toDoRepository: ToDoRepository) {
+    init(userRepository: UserRepository, toDoRepository: ToDoRepository) {
+        self.userRepository = userRepository
         self.toDoRepository = toDoRepository
     }
             
@@ -39,21 +41,22 @@ class NewItemVM: BaseVM {
             guard await canSave else {
                 return
             }
-            guard let uid = FirebaseManager.shared.getUserId() else {
+            
+            guard let uid = userRepository.getUserId() else {
                 return
             }
-           
-            let toDoId = UUID().uuidString
-            let newItem = ToDoItem(
-                id: toDoId,
-                title: title,
-                dueDate: dueDate.timeIntervalSince1970,
-                createDate: Date().timeIntervalSince1970,
-                isDone: false
-            )
-            let result = await toDoRepository.addNewToDo(uid: uid, todo: newItem)
-          
-            if case .failure(let error) = result {
+                       
+            do {
+                let toDoId = UUID().uuidString
+                let newItem = ToDoItem(
+                    id: toDoId,
+                    title: title,
+                    dueDate: dueDate.timeIntervalSince1970,
+                    createDate: Date().timeIntervalSince1970,
+                    isDone: false
+                )
+                try await toDoRepository.addNewToDo(uid: uid, todo: newItem)
+            } catch {
                 await MainActor.run {
                     bannerData = BannerData(
                         title: "Error",

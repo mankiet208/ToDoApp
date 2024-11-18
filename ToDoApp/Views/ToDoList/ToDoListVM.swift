@@ -13,12 +13,15 @@ class ToDoListVM: BaseVM {
     @Published var showNewItemView = false
     @Published var toDoItems = [ToDoItem]()
     
-    private let toDoRepository: ToDoRepository
+    
     private let userId: String
+    private let userRepository: UserRepository
+    private let toDoRepository: ToDoRepository
     private var listener: ListenerRegistration?
     
-    init(userId: String, toDoRepository: ToDoRepository) {
+    init(userId: String, userRepository: UserRepository, toDoRepository: ToDoRepository) {
         self.userId = userId
+        self.userRepository = userRepository
         self.toDoRepository = toDoRepository
     }
     
@@ -28,17 +31,15 @@ class ToDoListVM: BaseVM {
     
     func markAsDone(toDoId: String) async {
         Task {
-            let uid = FirebaseManager.shared.getUserId()
-            
-            guard let uid = uid,
+            guard let uid = userRepository.getUserId(),
                   let index = toDoItems.firstIndex(where: {$0.id == toDoId }) else {
                 return
             }
             
-            let isDone = !toDoItems[index].isDone
-            let result = await toDoRepository.markAsDone(uid: uid, toDoId: toDoId, isDone: isDone)
-            
-            if case .failure(let error) = result {
+            do {
+                let isDone = !toDoItems[index].isDone
+                try await toDoRepository.markAsDone(uid: uid, toDoId: toDoId, isDone: isDone)
+            } catch {
                 await MainActor.run {
                     bannerData = BannerData(
                         title: "Error",

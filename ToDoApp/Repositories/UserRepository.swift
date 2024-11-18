@@ -10,11 +10,12 @@ import FirebaseAuth
 import FirebaseFirestore
 
 protocol UserRepository {
-    func getUser(uid: String) async -> Result<User?, Error>
+    func getUserId() -> String?
+    func getUser(uid: String) async throws -> User?
     func setUser(uid: String, user: User) async throws
     func createUser(email: String, password: String) async throws -> String?
     func signIn(email: String, password: String) async throws
-    func signOut() -> Result<Void, Error>
+    func signOut() throws
 }
 
 struct UserRepositoryImp: UserRepository {
@@ -25,8 +26,12 @@ struct UserRepositoryImp: UserRepository {
         self.service = service
     }
     
-    func getUser(uid: String) async -> Result<User?, Error> {
-        return await service.getUser(uid: uid)
+    func getUserId() -> String? {
+        return service.getUserId()
+    }
+    
+    func getUser(uid: String) async throws -> User? {
+        return try await service.getUser(uid: uid)
     }
     
     func setUser(uid: String, user: User) async throws {
@@ -41,7 +46,7 @@ struct UserRepositoryImp: UserRepository {
         try await service.signIn(email: email, password: password)
     }
     
-    func signOut() -> Result<Void, Error> {
-        return service.signOut()
+    func signOut() throws {
+        try service.signOut()
     }
 }

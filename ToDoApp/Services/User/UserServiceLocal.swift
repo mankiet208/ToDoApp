@@ -8,24 +8,21 @@
 import Foundation
 
 struct UserServiceLocal: UserService {
-    
-    func getUser(uid: String) async -> Result<User?, Error> {
-        return .success(nil)
+    func getUserId() -> String? {
+        return nil
     }
     
-    func setUser(uid: String, user: User) async throws {
-        
+    func getUser(uid: String) async throws -> User? {
+        return nil
     }
+    
+    func setUser(uid: String, user: User) async throws {}
     
     func createUser(email: String, password: String) async throws -> String? {
         return nil
     }
     
-    func signIn(email: String, password: String) async throws {
-        
-    }
+    func signIn(email: String, password: String) async throws {}
     
-    func signOut() -> Result<Void, Error> {
-        return .success(())
-    }
+    func signOut() throws {}
 }

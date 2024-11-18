@@ -8,9 +8,10 @@
 import Foundation
 
 protocol UserService {
-    func getUser(uid: String) async -> Result<User?, Error>
+    func getUserId() -> String?
+    func getUser(uid: String) async throws -> User?
     func setUser(uid: String, user: User) async throws
     func createUser(email: String, password: String) async throws -> String?
     func signIn(email: String, password: String) async throws
-    func signOut() -> Result<Void, Error>
+    func signOut() throws
 }

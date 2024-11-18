@@ -15,6 +15,10 @@ class ProfileVM: BaseVM {
     }
     
     func logOut() {
-        _ = userRepository.signOut()
+        do {
+            try userRepository.signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
