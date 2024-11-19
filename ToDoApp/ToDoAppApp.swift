@@ -6,13 +6,10 @@
 //
 
 import SwiftUI
-import FirebaseCore
 
 @main
 struct ToDoAppApp: App {
-    init() {
-        FirebaseApp.configure()
-    }
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {

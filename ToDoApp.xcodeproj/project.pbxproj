@@ -48,7 +48,6 @@
 		393DE3552CE6F13C0038F2B9 /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE3182CE6F13B0038F2B9 /* ErrorWrapper.swift */; };
 		393DE3562CE6F13C0038F2B9 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */; };
 		393DE3572CE6F13C0038F2B9 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31C2CE6F13B0038F2B9 /* Development.xcconfig */; };
-		393DE3582CE6F13C0038F2B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31D2CE6F13B0038F2B9 /* GoogleService-Info.plist */; };
 		393DE3592CE6F13C0038F2B9 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 393DE31E2CE6F13B0038F2B9 /* Production.xcconfig */; };
 		393DE35A2CE6F13C0038F2B9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393DE31F2CE6F13B0038F2B9 /* Configuration.swift */; };
 		393DE35C2CE6F13C0038F2B9 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 393DE3242CE6F13B0038F2B9 /* Roboto-Medium.ttf */; };
@@ -65,6 +64,8 @@
 		396BFC492CEB2852003A7CB6 /* FirestoreMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */; };
 		396BFC4C2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC4B2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift */; };
 		396BFC4E2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */; };
+		396BFC522CEC7A32003A7CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC512CEC7A32003A7CB6 /* AppDelegate.swift */; };
+		396BFC542CEC7ABA003A7CB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 396BFC532CEC7ABA003A7CB6 /* GoogleService-Info.plist */; };
 		39922ADF2CE741F40009ECC1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 39922ADE2CE741F40009ECC1 /* FirebaseAuth */; };
 		39922AE12CE741F40009ECC1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 39922AE02CE741F40009ECC1 /* FirebaseFirestore */; };
 		39922AE42CE746B70009ECC1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE32CE746B70009ECC1 /* UserService.swift */; };
@@ -118,7 +119,6 @@
 		393DE3182CE6F13B0038F2B9 /* ErrorWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
 		393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		393DE31C2CE6F13B0038F2B9 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
-		393DE31D2CE6F13B0038F2B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		393DE31E2CE6F13B0038F2B9 /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		393DE31F2CE6F13B0038F2B9 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		393DE3242CE6F13B0038F2B9 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -135,6 +135,8 @@
 		396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMethod.swift; sourceTree = "<group>"; };
 		396BFC4B2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFirestoreEndpoint.swift; sourceTree = "<group>"; };
 		396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFirestoreEndpoint.swift; sourceTree = "<group>"; };
+		396BFC512CEC7A32003A7CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		396BFC532CEC7ABA003A7CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		39922AE32CE746B70009ECC1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		39922AE52CE746C50009ECC1 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceFirestore.swift; sourceTree = "<group>"; };
@@ -175,7 +177,9 @@
 		393DE2D72CE6F0FB0038F2B9 /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
+				396BFC512CEC7A32003A7CB6 /* AppDelegate.swift */,
 				393DE2D82CE6F0FB0038F2B9 /* ToDoAppApp.swift */,
+				396BFC532CEC7ABA003A7CB6 /* GoogleService-Info.plist */,
 				393DE2DC2CE6F0FC0038F2B9 /* Assets.xcassets */,
 				393DE3202CE6F13B0038F2B9 /* Resources */,
 				393DE31B2CE6F13B0038F2B9 /* Configs */,
@@ -285,7 +289,6 @@
 			isa = PBXGroup;
 			children = (
 				393DE31C2CE6F13B0038F2B9 /* Development.xcconfig */,
-				393DE31D2CE6F13B0038F2B9 /* GoogleService-Info.plist */,
 				393DE31E2CE6F13B0038F2B9 /* Production.xcconfig */,
 				393DE31F2CE6F13B0038F2B9 /* Configuration.swift */,
 			);
@@ -519,10 +522,10 @@
 				393DE3572CE6F13C0038F2B9 /* Development.xcconfig in Resources */,
 				393DE3592CE6F13C0038F2B9 /* Production.xcconfig in Resources */,
 				393DE35F2CE6F13C0038F2B9 /* Roboto-Bold.ttf in Resources */,
-				393DE3582CE6F13C0038F2B9 /* GoogleService-Info.plist in Resources */,
 				393DE35C2CE6F13C0038F2B9 /* Roboto-Medium.ttf in Resources */,
 				393DE2E02CE6F0FC0038F2B9 /* Preview Assets.xcassets in Resources */,
 				393DE35E2CE6F13C0038F2B9 /* Roboto-Regular.ttf in Resources */,
+				396BFC542CEC7ABA003A7CB6 /* GoogleService-Info.plist in Resources */,
 				393DE35D2CE6F13C0038F2B9 /* Roboto-Light.ttf in Resources */,
 				393DE2DD2CE6F0FC0038F2B9 /* Assets.xcassets in Resources */,
 			);
@@ -567,6 +570,7 @@
 				393DE3522CE6F13C0038F2B9 /* ToDoItem.swift in Sources */,
 				393DE3382CE6F13C0038F2B9 /* ToDoItemView.swift in Sources */,
 				396BFC432CEB242E003A7CB6 /* FirestoreEndpoint.swift in Sources */,
+				396BFC522CEC7A32003A7CB6 /* AppDelegate.swift in Sources */,
 				393DE3512CE6F13C0038F2B9 /* ProfileVM.swift in Sources */,
 				396BFC452CEB248D003A7CB6 /* FirestoreService.swift in Sources */,
 				393DE32E2CE6F13C0038F2B9 /* StringExtension.swift in Sources */,
@@ -726,14 +730,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kiettruong.ToDoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = mankiet208.ToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -760,14 +764,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kiettruong.ToDoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = mankiet208.ToDoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

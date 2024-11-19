@@ -18,7 +18,6 @@ class LoginVM: BaseVM {
         self.userRepository = userRepository
     }
     
-    // Test account: kiet@gmail.com/Kiet12345
     @MainActor
     func login() async {
         do {
