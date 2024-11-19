@@ -37,9 +37,6 @@ struct ToDoListView: View {
                 }
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
-                .refreshable {
-                    await viewModel.fetchData()
-                }
             }
             .toolbar {
                 Button {
@@ -52,8 +49,8 @@ struct ToDoListView: View {
             .sheet(isPresented: $viewModel.showNewItemView) {
                 NewItemView.createInstance(isPresented: $viewModel.showNewItemView)
             }
-            .task {
-                await viewModel.fetchData()
+            .onAppear {
+                viewModel.fetchData()
             }
             .banner(data: $viewModel.bannerData)
         }

@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import FirebaseAuth
 import FirebaseFirestore
 
 protocol ToDoRepository {
-//    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration?
+    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration?
     func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws
     func addNewToDo(uid: String, todo: ToDoItem) async throws
 }
@@ -21,6 +20,10 @@ struct ToDoRepositoryImp: ToDoRepository {
     
     init(service: ToDoService) {
         self.service = service
+    }
+    
+    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration? {
+        return service.fetchData(completion: completion)
     }
     
     func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws {

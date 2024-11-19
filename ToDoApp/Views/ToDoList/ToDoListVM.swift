@@ -13,7 +13,6 @@ class ToDoListVM: BaseVM {
     @Published var showNewItemView = false
     @Published var toDoItems = [ToDoItem]()
     
-    
     private let userId: String
     private let userRepository: UserRepository
     private let toDoRepository: ToDoRepository
@@ -51,15 +50,15 @@ class ToDoListVM: BaseVM {
         }
     }
     
-    func fetchData() async {
-//        listener = toDoRepository.fetchData { [weak self] result in
-//            switch result {
-//            case .success(let items):
-//                self?.toDoItems = items
-//            case .failure(let error):
-//                print(error.localizedDescription)
-//            }
-//        }
+    func fetchData() {
+        listener = toDoRepository.fetchData { [weak self] result in
+            switch result {
+            case .success(let items):
+                self?.toDoItems = items
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
 

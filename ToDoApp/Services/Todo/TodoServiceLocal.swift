@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 struct ToDoServiceLocal: ToDoService {
+    
+    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration? {
+        return nil
+    }
     
     func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws {}
     

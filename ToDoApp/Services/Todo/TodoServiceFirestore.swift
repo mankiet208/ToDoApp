@@ -14,6 +14,7 @@ struct ToDoServiceFirestore: ToDoService {
         guard let uid = FirebaseAuthManager.shared.getUserId() else {
             return nil
         }
+        
         let collectionRef = Firestore.firestore()
             .collection("users")
             .document(uid)
@@ -39,6 +40,7 @@ struct ToDoServiceFirestore: ToDoService {
             
             completion(.success(toDoItems))
         }
+        
         return listener
     }
     

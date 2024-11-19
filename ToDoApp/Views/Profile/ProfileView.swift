@@ -26,9 +26,9 @@ struct ProfileView: View {
             List {
                 userView
                 
-                Button("Setting this") {}
+                Button("Setting A") {}
                 
-                Button("Setting that") {}
+                Button("Setting B") {}
                 
                 Button {
                     showAlert = true
