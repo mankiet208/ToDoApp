@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import FirebaseFirestore
 
 protocol ToDoService {
-    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration?
-    func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws
-    func addNewToDo(uid: String, todo: ToDoItem) async throws
+    func fetchData() async throws -> [ToDoItem]
+    func markAsDone(toDoId: String, isDone: Bool) async throws
+    func addNewToDo(todo: ToDoItem) async throws
 }

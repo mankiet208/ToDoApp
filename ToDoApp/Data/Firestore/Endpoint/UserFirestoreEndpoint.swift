@@ -11,7 +11,7 @@ enum UserFirestoreEndpoint: FirestoreEndpoint {
     case getUser(uid: String)
     case setUser(uid: String, user: User)
     
-    var path: FirestoreReference {
+    var path: FirestoreReference? {
         switch self {
         case .getUser(let uid), .setUser(let uid, _):
             return firestore

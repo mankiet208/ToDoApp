@@ -10,11 +10,11 @@ import FirebaseFirestore
 
 struct ToDoServiceLocal: ToDoService {
     
-    func fetchData(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration? {
-        return nil
+    func fetchData() -> [ToDoItem] {
+        return []
     }
     
-    func markAsDone(uid: String, toDoId: String, isDone: Bool) async throws {}
+    func markAsDone(toDoId: String, isDone: Bool) async throws {}
     
-    func addNewToDo(uid: String, todo: ToDoItem) async throws {}
+    func addNewToDo(todo: ToDoItem) async throws {}
 }

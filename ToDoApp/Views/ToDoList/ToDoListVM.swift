@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
+@MainActor
 class ToDoListVM: BaseVM {
     @Published var showNewItemView = false
     @Published var toDoItems = [ToDoItem]()
@@ -16,7 +17,6 @@ class ToDoListVM: BaseVM {
     private let userId: String
     private let userRepository: UserRepository
     private let toDoRepository: ToDoRepository
-    private var listener: ListenerRegistration?
     
     init(userId: String, userRepository: UserRepository, toDoRepository: ToDoRepository) {
         self.userId = userId
@@ -24,41 +24,26 @@ class ToDoListVM: BaseVM {
         self.toDoRepository = toDoRepository
     }
     
-    deinit {
-        listener?.remove()
+    func fetchData() async {
+        do {
+            toDoItems = try await toDoRepository.fetchData()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     func markAsDone(toDoId: String) async {
-        Task {
-            guard let uid = userRepository.getUserId(),
-                  let index = toDoItems.firstIndex(where: {$0.id == toDoId }) else {
-                return
-            }
-            
-            do {
-                let isDone = !toDoItems[index].isDone
-                try await toDoRepository.markAsDone(uid: uid, toDoId: toDoId, isDone: isDone)
-            } catch {
-                await MainActor.run {
-                    bannerData = BannerData(
-                        title: "Error",
-                        message: error.localizedDescription,
-                        type: .error
-                    )
-                }
-            }
+        guard let index = toDoItems.firstIndex(where: {$0.id == toDoId }) else {
+            return
         }
-    }
-    
-    func fetchData() {
-        listener = toDoRepository.fetchData { [weak self] result in
-            switch result {
-            case .success(let items):
-                self?.toDoItems = items
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+        
+        do {
+            let isDone = !toDoItems[index].isDone
+            try await toDoRepository.markAsDone(toDoId: toDoId, isDone: isDone)
+        } catch {
+            print(error.localizedDescription)
         }
+        
     }
 }
 

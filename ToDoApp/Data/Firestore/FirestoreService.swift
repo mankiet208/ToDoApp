@@ -11,7 +11,7 @@ import FirebaseFirestore
 protocol FirestoreServiceProtocol {
     static func request(_ endpoint: FirestoreEndpoint) async throws -> Void
     static func requestOne<T>(_ endpoint: FirestoreEndpoint) async throws -> T where T: FirestoreIdentifiable
-    static func requestMany<T>(_ endpoint: FirestoreEndpoint) async throws -> [T] where T: FirestoreIdentifiable
+    static func requestMany<T>(_ endpoint: FirestoreEndpoint, orderBy: [QueryObject]) async throws -> [T] where T: FirestoreIdentifiable
 }
 
 final class FirestoreService: FirestoreServiceProtocol {
@@ -56,19 +56,34 @@ final class FirestoreService: FirestoreServiceProtocol {
         }
     }
 
-    static func requestMany<T>(_ endpoint: FirestoreEndpoint) async throws -> [T] where T: FirestoreIdentifiable {
+    static func requestMany<T>(_ endpoint: FirestoreEndpoint,
+                               orderBy: [QueryObject] = []) async throws -> [T] where T: FirestoreIdentifiable {
         guard let ref = endpoint.path as? CollectionReference else {
             throw FirestoreServiceError.collectionNotFound
         }
         switch endpoint.method {
         case .get:
-            let querySnapshot = try await ref.getDocuments()
             var response: [T] = []
+            var query: Query?
+            
+            // Querying
+            for item in orderBy {
+                if let qry = query {
+                    query = qry.order(by: item.field, descending: item.isDescending)
+                } else {
+                    query = ref.order(by: item.field, descending: item.isDescending)
+                }
+            }
+            
+            let querySnapshot = (query != nil)
+                ? try await query!.getDocuments()
+                : try await ref.getDocuments()
+            
             for document in querySnapshot.documents {
-                document.data()
                 let data = T.parse(data: document.data())
                 response.append(data)
             }
+            
             return response
         case .post, .put, .delete:
             throw FirestoreServiceError.operationNotSupported

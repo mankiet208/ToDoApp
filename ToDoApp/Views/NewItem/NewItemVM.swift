@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
+@MainActor
 class NewItemVM: BaseVM {
     @Published var title = ""
     @Published var dueDate = Date()
@@ -21,8 +22,8 @@ class NewItemVM: BaseVM {
         self.userRepository = userRepository
         self.toDoRepository = toDoRepository
     }
-            
-    @MainActor var canSave: Bool {
+    
+    var canCreate: Bool {
         showAlert = false
         
         guard !title.trimmingCharacters(in: .whitespaces).isEmpty else {
@@ -36,35 +37,27 @@ class NewItemVM: BaseVM {
         return true
     }
     
-    func save() async {
-        Task {
-            guard await canSave else {
-                return
-            }
-            
-            guard let uid = userRepository.getUserId() else {
-                return
-            }
-                       
-            do {
-                let toDoId = UUID().uuidString
-                let newItem = ToDoItem(
-                    id: toDoId,
-                    title: title,
-                    dueDate: dueDate.timeIntervalSince1970,
-                    createDate: Date().timeIntervalSince1970,
-                    isDone: false
-                )
-                try await toDoRepository.addNewToDo(uid: uid, todo: newItem)
-            } catch {
-                await MainActor.run {
-                    bannerData = BannerData(
-                        title: "Error",
-                        message: error.localizedDescription,
-                        type: .error
-                    )
-                }
-            }
+    func createToDo() async {
+        guard canCreate else {
+            return
+        }
+        
+        do {
+            let toDoId = UUID().uuidString
+            let newItem = ToDoItem(
+                id: toDoId,
+                title: title,
+                dueDate: dueDate.timeIntervalSince1970,
+                createDate: Date().timeIntervalSince1970,
+                isDone: false
+            )
+            try await toDoRepository.addNewToDo(todo: newItem)
+        } catch {
+            bannerData = BannerData(
+                title: "Error",
+                message: error.localizedDescription,
+                type: .error
+            )
         }
     }
 }

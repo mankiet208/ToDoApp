@@ -6,12 +6,12 @@
 //
 
 import Foundation
-import FirebaseAuth
 import FirebaseFirestore
 
 protocol FirestoreEndpoint {
-    var path: FirestoreReference { get }
+    var path: FirestoreReference? { get }
     var method: FirestoreMethod { get }
+    var firestore: Firestore { get }
 }
 
 extension FirestoreEndpoint {

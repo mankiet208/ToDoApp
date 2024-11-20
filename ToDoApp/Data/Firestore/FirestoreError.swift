@@ -12,6 +12,7 @@ enum FirestoreServiceError: Error {
     case collectionNotFound
     case invalidPath
     case invalidRequest
+    case invalidQuery
     case parseError
     case operationNotSupported
 }

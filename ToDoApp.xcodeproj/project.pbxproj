@@ -69,6 +69,7 @@
 		396BFC572CEC8B7A003A7CB6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 396BFC562CEC8B7A003A7CB6 /* FirebaseAuth */; };
 		396BFC592CEC8B7A003A7CB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 396BFC582CEC8B7A003A7CB6 /* FirebaseFirestore */; };
 		396BFC5B2CEC8B7A003A7CB6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 396BFC5A2CEC8B7A003A7CB6 /* FirebaseFirestoreSwift */; };
+		396BFC5D2CEDE706003A7CB6 /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */; };
 		39922AE42CE746B70009ECC1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE32CE746B70009ECC1 /* UserService.swift */; };
 		39922AE62CE746C50009ECC1 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE52CE746C50009ECC1 /* TodoService.swift */; };
 		39922AE92CE747330009ECC1 /* UserServiceFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */; };
@@ -138,6 +139,7 @@
 		396BFC4D2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoFirestoreEndpoint.swift; sourceTree = "<group>"; };
 		396BFC512CEC7A32003A7CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		396BFC532CEC7ABA003A7CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
 		39922AE32CE746B70009ECC1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		39922AE52CE746C50009ECC1 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
 		39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceFirestore.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				393DE3162CE6F13B0038F2B9 /* User.swift */,
 				393DE3172CE6F13B0038F2B9 /* Resource.swift */,
 				393DE3182CE6F13B0038F2B9 /* ErrorWrapper.swift */,
+				396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				393DE3412CE6F13C0038F2B9 /* BaseVM.swift in Sources */,
 				396BFC4C2CEB4179003A7CB6 /* UserFirestoreEndpoint.swift in Sources */,
 				396BFC472CEB252A003A7CB6 /* FirestoreError.swift in Sources */,
+				396BFC5D2CEDE706003A7CB6 /* QueryObject.swift in Sources */,
 				393DE33C2CE6F13C0038F2B9 /* ToDoListView.swift in Sources */,
 				393DE3602CE6F13C0038F2B9 /* DIType.swift in Sources */,
 				393DE3402CE6F13C0038F2B9 /* BaseNavigation.swift in Sources */,

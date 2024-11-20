@@ -6,34 +6,44 @@
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
 enum ToDoFirestoreEndpoint: FirestoreEndpoint {
-    case addNewToDo(uid: String, toDo: ToDoItem)
-    case markAsDone(uid: String, toDoId: String, isDone: Bool)
+    case listToDo
+    case addNewToDo(toDo: ToDoItem)
+    case markAsDone(toDoId: String, isDone: Bool)
     
-    var path: FirestoreReference {
+    var path: FirestoreReference? {
+        guard let uid = FirebaseAuthManager.shared.getUserId() else {
+            return nil
+        }
+
         switch self {
-        case  .addNewToDo(let uid, let todo):
-            return firestore
-                .collection("users")
-                .document(uid)
-                .collection("todos")
-                .document(todo.id)
-        case .markAsDone(let uid, let toDoId, _):
-            return firestore
-                .collection("users")
-                .document(uid)
-                .collection("todos")
-                .document(toDoId)
+        case .listToDo:
+            return toDoCollection(uid)
+        case  .addNewToDo(let todo):
+            return toDoCollection(uid).document(todo.id)
+        case .markAsDone(let toDoId, _):
+            return toDoCollection(uid).document(toDoId)
         }
     }
 
     var method: FirestoreMethod {
         switch self {
-        case .addNewToDo(_, let toDo):
+        case .listToDo:
+            return .get
+        case .addNewToDo(let toDo):
             return .post(toDo)
-        case .markAsDone(_, _, let isDone):
+        case .markAsDone(_, let isDone):
             return .put(params: ["isDone": isDone], merge: true)
         }
+    }
+    
+    private func toDoCollection(_ uid: String) -> CollectionReference {
+        return firestore
+            .collection("users")
+            .document(uid)
+            .collection("todos")
     }
 }

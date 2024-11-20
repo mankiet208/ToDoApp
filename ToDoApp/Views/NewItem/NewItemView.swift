@@ -47,14 +47,14 @@ struct NewItemView: View {
                 TextField("Title", text: $viewModel.title)
                 
                 // Due Date
-                DatePicker("Due Date", selection: $viewModel.dueDate)
+                DatePicker("Due Date", selection: $viewModel.dueDate, in: Date.now...)
                     .datePickerStyle(.graphical)
                 
                 // Button
-                TDButton(title: "Save", backgroundColor: .blue) {
-                    if viewModel.canSave {
+                TDButton(title: "Create", backgroundColor: .blue) {
+                    if viewModel.canCreate {
                         Task {
-                            await viewModel.save()
+                            await viewModel.createToDo()
                             isPresented = false
                         }
                     } else {
