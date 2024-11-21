@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
 import FirebaseFirestore
 
 @MainActor
@@ -18,18 +17,30 @@ class ToDoListVM: BaseVM {
     private let userRepository: UserRepository
     private let toDoRepository: ToDoRepository
     
+    var listener: ListenerRegistration?
+    
     init(userId: String, userRepository: UserRepository, toDoRepository: ToDoRepository) {
         self.userId = userId
         self.userRepository = userRepository
         self.toDoRepository = toDoRepository
     }
     
-    func fetchData() async {
-        do {
-            toDoItems = try await toDoRepository.fetchData()
-        } catch {
-            print(error.localizedDescription)
+    deinit {
+        if (listener != nil) {
+            listener?.remove()
+            listener = nil
         }
+    }
+    
+    func fetchAndListenToDos() {
+        listener = toDoRepository.fetchAndListenToDos(completion: { [weak self] result in
+            switch result {
+            case .success(let items):
+                self?.toDoItems = items
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        })
     }
     
     func markAsDone(toDoId: String) async {
@@ -43,7 +54,6 @@ class ToDoListVM: BaseVM {
         } catch {
             print(error.localizedDescription)
         }
-        
     }
 }
 

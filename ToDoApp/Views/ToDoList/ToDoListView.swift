@@ -11,10 +11,8 @@ struct ToDoListView: View {
     @ObservedObject var viewModel: ToDoListVM
 
     static func createInstance(userId: String) -> ToDoListView {
-        let userService = UserServiceFirestore()
-        let userRepo = UserRepositoryImp(service: userService)
-        let toDoService = ToDoServiceFirestore()
-        let toDoRepo = ToDoRepositoryImp(service: toDoService)
+        let userRepo = UserRepositoryFirestore()
+        let toDoRepo = ToDoRepositoryFirestore()
         let toDoListVM = ToDoListVM(
             userId: userId,
             userRepository: userRepo,
@@ -37,9 +35,6 @@ struct ToDoListView: View {
                 }
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
-                .refreshable {
-                    await viewModel.fetchData()
-                }
             }
             .toolbar {
                 Button {
@@ -54,7 +49,7 @@ struct ToDoListView: View {
             }
             .banner(data: $viewModel.bannerData)
             .task {
-                await viewModel.fetchData()
+                viewModel.fetchAndListenToDos()
             }
         }
     }

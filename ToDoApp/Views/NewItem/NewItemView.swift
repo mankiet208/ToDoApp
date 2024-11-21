@@ -10,12 +10,10 @@ import SwiftUI
 struct NewItemView: View {
     @ObservedObject var viewModel: NewItemVM
     @Binding var isPresented: Bool
-    
+        
     static func createInstance(isPresented: Binding<Bool>) -> NewItemView {
-        let userService = UserServiceFirestore()
-        let userRepo = UserRepositoryImp(service: userService)
-        let toDoService = ToDoServiceFirestore()
-        let toDoRepo = ToDoRepositoryImp(service: toDoService)
+        let userRepo = UserRepositoryFirestore()
+        let toDoRepo = ToDoRepositoryFirestore()
         let newItemVM = NewItemVM(
             userRepository: userRepo,
             toDoRepository: toDoRepo
@@ -54,7 +52,7 @@ struct NewItemView: View {
                 TDButton(title: "Create", backgroundColor: .blue) {
                     if viewModel.canCreate {
                         Task {
-                            await viewModel.createToDo()
+                            _ = await viewModel.createToDo()
                             isPresented = false
                         }
                     } else {

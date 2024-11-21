@@ -37,27 +37,30 @@ class NewItemVM: BaseVM {
         return true
     }
     
-    func createToDo() async {
+    func createToDo() async -> ToDoItem? {
         guard canCreate else {
-            return
+            return nil
         }
         
         do {
             let toDoId = UUID().uuidString
-            let newItem = ToDoItem(
+            let newToDo = ToDoItem(
                 id: toDoId,
                 title: title,
                 dueDate: dueDate.timeIntervalSince1970,
                 createDate: Date().timeIntervalSince1970,
                 isDone: false
             )
-            try await toDoRepository.addNewToDo(todo: newItem)
+            try await toDoRepository.addNewToDo(todo: newToDo)
+            
+            return newToDo
         } catch {
             bannerData = BannerData(
                 title: "Error",
                 message: error.localizedDescription,
                 type: .error
             )
+            return nil
         }
     }
 }

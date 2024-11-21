@@ -11,8 +11,7 @@ struct LoginView: View {
     @ObservedObject var viewModel: LoginVM
     
     static func createInstance() -> LoginView {
-        let userService = UserServiceFirestore()
-        let userRepo = UserRepositoryImp(service: userService)
+        let userRepo = UserRepositoryFirestore()
         let loginVM = LoginVM(userRepository: userRepo)
         return LoginView(viewModel: loginVM)
     }

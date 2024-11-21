@@ -1,13 +1,15 @@
 //
-//  UserService.swift
-//  ToDoApp
+//  UserRepository.swift
+//  ToDoList
 //
-//  Created by Kiet Truong on 15/11/2024.
+//  Created by Kiet Truong on 28/06/2023.
 //
 
 import Foundation
+import FirebaseAuth
+import FirebaseFirestore
 
-protocol UserService {
+protocol UserRepository {
     func getUserId() -> String?
     func getUser(uid: String) async throws -> User?
     func setUser(uid: String, user: User) async throws

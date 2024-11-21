@@ -1,21 +1,20 @@
 //
-//  UserServiceFirestore.swift
+//  UserRepositoryImp.swift
 //  ToDoApp
 //
-//  Created by Kiet Truong on 15/11/2024.
+//  Created by Kiet Truong on 21/11/2024.
 //
 
 import Foundation
 import FirebaseAuth
-import FirebaseFirestore
 
-struct UserServiceFirestore: UserService {
+struct UserRepositoryFirestore: UserRepository {
     
     func getUserId() -> String? {
         return FirebaseAuthManager.shared.getUserId()
     }
     
-    func getUser(uid: String) async throws -> User? {        
+    func getUser(uid: String) async throws -> User? {
         return try await FirestoreService.requestOne(
             UserFirestoreEndpoint.getUser(uid: uid)
         )

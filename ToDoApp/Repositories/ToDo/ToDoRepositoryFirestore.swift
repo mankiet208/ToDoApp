@@ -1,24 +1,34 @@
 //
-//  TodoServiceFirestore.swift
+//  ToDoRepositoryImp.swift
 //  ToDoApp
 //
-//  Created by Kiet Truong on 15/11/2024.
+//  Created by Kiet Truong on 21/11/2024.
 //
 
 import Foundation
 import FirebaseFirestore
-import FirebaseFirestoreSwift
 
-struct ToDoServiceFirestore: ToDoService {
+struct ToDoRepositoryFirestore: ToDoRepository {
     
-    func fetchData() async throws -> [ToDoItem] {
+    func fetchAndListenToDos(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration? {
+        return FirestoreService.fetchAndListen(
+            ToDoFirestoreEndpoint.listToDo,
+            orderBy: [
+                QueryObject(field: "isDone", isDescending: false),
+                QueryObject(field: "createDate", isDescending: true)
+            ],
+            completion: completion
+        )
+    }
+    
+    func fetchToDos() async throws -> [ToDoItem] {
         return try await FirestoreService.requestMany(
             ToDoFirestoreEndpoint.listToDo,
             orderBy: [
                 QueryObject(field: "isDone", isDescending: false),
                 QueryObject(field: "createDate", isDescending: true)
             ]
-        )        
+        )
     }
     
     func markAsDone(toDoId: String, isDone: Bool) async throws {
@@ -33,4 +43,3 @@ struct ToDoServiceFirestore: ToDoService {
         )
     }
 }
-

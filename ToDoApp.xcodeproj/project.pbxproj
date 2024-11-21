@@ -70,12 +70,8 @@
 		396BFC592CEC8B7A003A7CB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 396BFC582CEC8B7A003A7CB6 /* FirebaseFirestore */; };
 		396BFC5B2CEC8B7A003A7CB6 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 396BFC5A2CEC8B7A003A7CB6 /* FirebaseFirestoreSwift */; };
 		396BFC5D2CEDE706003A7CB6 /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */; };
-		39922AE42CE746B70009ECC1 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE32CE746B70009ECC1 /* UserService.swift */; };
-		39922AE62CE746C50009ECC1 /* TodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE52CE746C50009ECC1 /* TodoService.swift */; };
-		39922AE92CE747330009ECC1 /* UserServiceFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */; };
-		39922AEB2CE747A20009ECC1 /* UserServiceLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AEA2CE747A20009ECC1 /* UserServiceLocal.swift */; };
-		39922AEE2CE748680009ECC1 /* TodoServiceFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AED2CE748680009ECC1 /* TodoServiceFirestore.swift */; };
-		39922AF02CE748760009ECC1 /* TodoServiceLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39922AEF2CE748760009ECC1 /* TodoServiceLocal.swift */; };
+		396BFC602CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */; };
+		396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,12 +136,8 @@
 		396BFC512CEC7A32003A7CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		396BFC532CEC7ABA003A7CB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
-		39922AE32CE746B70009ECC1 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		39922AE52CE746C50009ECC1 /* TodoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoService.swift; sourceTree = "<group>"; };
-		39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceFirestore.swift; sourceTree = "<group>"; };
-		39922AEA2CE747A20009ECC1 /* UserServiceLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceLocal.swift; sourceTree = "<group>"; };
-		39922AED2CE748680009ECC1 /* TodoServiceFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceFirestore.swift; sourceTree = "<group>"; };
-		39922AEF2CE748760009ECC1 /* TodoServiceLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceLocal.swift; sourceTree = "<group>"; };
+		396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepositoryFirestore.swift; sourceTree = "<group>"; };
+		396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryFirestore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,10 +180,9 @@
 				393DE3202CE6F13B0038F2B9 /* Resources */,
 				393DE31B2CE6F13B0038F2B9 /* Configs */,
 				393DE2E62CE6F13B0038F2B9 /* Extensions */,
-				396BFC3E2CEB2325003A7CB6 /* Data */,
 				393DE3192CE6F13B0038F2B9 /* Helper */,
 				393DE3142CE6F13B0038F2B9 /* Models */,
-				39922AE22CE745E30009ECC1 /* Services */,
+				396BFC3E2CEB2325003A7CB6 /* Services */,
 				393DE30A2CE6F13B0038F2B9 /* Repositories */,
 				393DE2EC2CE6F13B0038F2B9 /* Views */,
 				393DE2DE2CE6F0FC0038F2B9 /* Preview Content */,
@@ -264,8 +255,8 @@
 		393DE30A2CE6F13B0038F2B9 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				393DE30B2CE6F13B0038F2B9 /* UserRepository.swift */,
-				393DE30C2CE6F13B0038F2B9 /* TodoRepository.swift */,
+				396BFC612CEEEE5A003A7CB6 /* User */,
+				396BFC5E2CEEE4B2003A7CB6 /* ToDo */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -337,16 +328,15 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		396BFC3E2CEB2325003A7CB6 /* Data */ = {
+		396BFC3E2CEB2325003A7CB6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */,
-				396BFC3F2CEB2339003A7CB6 /* Firestore */,
+				396BFC3F2CEB2339003A7CB6 /* Firebase */,
 			);
-			path = Data;
+			path = Services;
 			sourceTree = "<group>";
 		};
-		396BFC3F2CEB2339003A7CB6 /* Firestore */ = {
+		396BFC3F2CEB2339003A7CB6 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
 				396BFC4A2CEB415D003A7CB6 /* Endpoint */,
@@ -354,8 +344,9 @@
 				396BFC442CEB248D003A7CB6 /* FirestoreService.swift */,
 				396BFC482CEB2852003A7CB6 /* FirestoreMethod.swift */,
 				396BFC462CEB252A003A7CB6 /* FirestoreError.swift */,
+				393DE31A2CE6F13B0038F2B9 /* FirebaseAuthManager.swift */,
 			);
-			path = Firestore;
+			path = Firebase;
 			sourceTree = "<group>";
 		};
 		396BFC4A2CEB415D003A7CB6 /* Endpoint */ = {
@@ -368,33 +359,22 @@
 			path = Endpoint;
 			sourceTree = "<group>";
 		};
-		39922AE22CE745E30009ECC1 /* Services */ = {
+		396BFC5E2CEEE4B2003A7CB6 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				39922AE72CE747100009ECC1 /* User */,
-				39922AEC2CE7482C0009ECC1 /* Todo */,
+				393DE30C2CE6F13B0038F2B9 /* TodoRepository.swift */,
+				396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */,
 			);
-			path = Services;
+			path = ToDo;
 			sourceTree = "<group>";
 		};
-		39922AE72CE747100009ECC1 /* User */ = {
+		396BFC612CEEEE5A003A7CB6 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				39922AE32CE746B70009ECC1 /* UserService.swift */,
-				39922AE82CE747330009ECC1 /* UserServiceFirestore.swift */,
-				39922AEA2CE747A20009ECC1 /* UserServiceLocal.swift */,
+				393DE30B2CE6F13B0038F2B9 /* UserRepository.swift */,
+				396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		39922AEC2CE7482C0009ECC1 /* Todo */ = {
-			isa = PBXGroup;
-			children = (
-				39922AE52CE746C50009ECC1 /* TodoService.swift */,
-				39922AED2CE748680009ECC1 /* TodoServiceFirestore.swift */,
-				39922AEF2CE748760009ECC1 /* TodoServiceLocal.swift */,
-			);
-			path = Todo;
 			sourceTree = "<group>";
 		};
 		39922AF12CE9EF440009ECC1 /* Login */ = {
@@ -561,7 +541,6 @@
 				393DE3402CE6F13C0038F2B9 /* BaseNavigation.swift in Sources */,
 				393DE3562CE6F13C0038F2B9 /* FirebaseAuthManager.swift in Sources */,
 				393DE34A2CE6F13C0038F2B9 /* UserRepository.swift in Sources */,
-				39922AEE2CE748680009ECC1 /* TodoServiceFirestore.swift in Sources */,
 				393DE3322CE6F13C0038F2B9 /* LoginView.swift in Sources */,
 				393DE3542CE6F13C0038F2B9 /* Resource.swift in Sources */,
 				393DE3502CE6F13C0038F2B9 /* RegisterVM.swift in Sources */,
@@ -570,11 +549,10 @@
 				393DE3612CE6F13C0038F2B9 /* DIContainer.swift in Sources */,
 				393DE35A2CE6F13C0038F2B9 /* Configuration.swift in Sources */,
 				393DE3332CE6F13C0038F2B9 /* ToDoDetailView.swift in Sources */,
-				39922AE62CE746C50009ECC1 /* TodoService.swift in Sources */,
-				39922AF02CE748760009ECC1 /* TodoServiceLocal.swift in Sources */,
 				393DE32F2CE6F13C0038F2B9 /* CodableExtension.swift in Sources */,
 				393DE3532CE6F13C0038F2B9 /* User.swift in Sources */,
 				393DE3522CE6F13C0038F2B9 /* ToDoItem.swift in Sources */,
+				396BFC602CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift in Sources */,
 				393DE3382CE6F13C0038F2B9 /* ToDoItemView.swift in Sources */,
 				396BFC432CEB242E003A7CB6 /* FirestoreEndpoint.swift in Sources */,
 				396BFC522CEC7A32003A7CB6 /* AppDelegate.swift in Sources */,
@@ -586,7 +564,6 @@
 				393DE33A2CE6F13C0038F2B9 /* SecureTextField.swift in Sources */,
 				393DE33B2CE6F13C0038F2B9 /* Banner.swift in Sources */,
 				393DE3362CE6F13C0038F2B9 /* AppButton.swift in Sources */,
-				39922AE42CE746B70009ECC1 /* UserService.swift in Sources */,
 				393DE2D92CE6F0FB0038F2B9 /* ToDoAppApp.swift in Sources */,
 				393DE34B2CE6F13C0038F2B9 /* TodoRepository.swift in Sources */,
 				393DE3392CE6F13C0038F2B9 /* SpacingView.swift in Sources */,
@@ -594,13 +571,12 @@
 				393DE3352CE6F13C0038F2B9 /* AppLabel.swift in Sources */,
 				396BFC412CEB23EC003A7CB6 /* FirestoreProtocol.swift in Sources */,
 				396BFC4E2CEB4188003A7CB6 /* ToDoFirestoreEndpoint.swift in Sources */,
-				39922AEB2CE747A20009ECC1 /* UserServiceLocal.swift in Sources */,
 				393DE3622CE6F13C0038F2B9 /* DI.swift in Sources */,
 				393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */,
 				393DE32D2CE6F13C0038F2B9 /* ColorExtension.swift in Sources */,
+				396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */,
 				393DE34D2CE6F13C0038F2B9 /* NewItemVM.swift in Sources */,
 				393DE3372CE6F13C0038F2B9 /* HeaderView.swift in Sources */,
-				39922AE92CE747330009ECC1 /* UserServiceFirestore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

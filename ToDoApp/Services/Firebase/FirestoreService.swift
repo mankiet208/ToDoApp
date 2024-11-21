@@ -15,7 +15,7 @@ protocol FirestoreServiceProtocol {
 }
 
 final class FirestoreService: FirestoreServiceProtocol {
-
+    
     private init() {}
     
     static func request(_ endpoint: FirestoreEndpoint) async throws -> Void {
@@ -34,36 +34,37 @@ final class FirestoreService: FirestoreServiceProtocol {
             try await ref.delete()
         }
     }
-
+    
     static func requestOne<T>(_ endpoint: FirestoreEndpoint) async throws -> T where T: FirestoreIdentifiable {
         guard let ref = endpoint.path as? DocumentReference else {
             throw FirestoreServiceError.documentNotFound
         }
+        
         switch endpoint.method {
         case .get:
             guard let documentSnapshot = try? await ref.getDocument() else {
                 throw FirestoreServiceError.invalidPath
             }
-
+            
             guard let documentData = documentSnapshot.data() else {
                 throw FirestoreServiceError.parseError
             }
-
+            
             let response = T.parse(data: documentData)
             return response
         default:
             throw FirestoreServiceError.invalidRequest
         }
     }
-
+    
     static func requestMany<T>(_ endpoint: FirestoreEndpoint,
                                orderBy: [QueryObject] = []) async throws -> [T] where T: FirestoreIdentifiable {
         guard let ref = endpoint.path as? CollectionReference else {
             throw FirestoreServiceError.collectionNotFound
         }
+        
         switch endpoint.method {
         case .get:
-            var response: [T] = []
             var query: Query?
             
             // Querying
@@ -75,18 +76,63 @@ final class FirestoreService: FirestoreServiceProtocol {
                 }
             }
             
-            let querySnapshot = (query != nil)
-                ? try await query!.getDocuments()
-                : try await ref.getDocuments()
+            let finalRef = (query != nil) ? query! : ref
+            let querySnapshot = try await finalRef.getDocuments()
             
-            for document in querySnapshot.documents {
-                let data = T.parse(data: document.data())
-                response.append(data)
+            let results: [T] = querySnapshot.documents.map {
+                T.parse(data: $0.data())
             }
             
-            return response
+            return results
         case .post, .put, .delete:
             throw FirestoreServiceError.operationNotSupported
         }
     }
+    
+    static func fetchAndListen<T>(_ endpoint: FirestoreEndpoint,
+                                  orderBy: [QueryObject] = [],
+                                  completion: @escaping (Result<[T], Error>) -> Void) -> ListenerRegistration? where T: FirestoreIdentifiable {
+        guard let ref = endpoint.path as? CollectionReference else {
+            completion(.failure(FirestoreServiceError.collectionNotFound))
+            return nil
+        }
+        
+        var query: Query?
+        
+        // Querying
+        for item in orderBy {
+            if let qry = query {
+                query = qry.order(by: item.field, descending: item.isDescending)
+            } else {
+                query = ref.order(by: item.field, descending: item.isDescending)
+            }
+        }
+        
+        let finalRef = (query != nil) ? query! : ref
+                
+        let listener = finalRef.addSnapshotListener { snapshot, error in
+            if error != nil {
+                completion(.failure(FirestoreServiceError.invalidRequest))
+                return
+            }
+            
+//            guard let documents = snapshot?.documents, !documents.isEmpty else {
+//                completion(.success([]))
+//                return
+//            }
+            
+            guard let documents = snapshot?.documents else {
+                completion(.failure(FirestoreServiceError.invalidRequest))
+                return
+            }
+            
+            let results: [T] = documents.map {
+                T.parse(data: $0.data())
+            }
+            
+            completion(.success(results))
+        }
+        return listener
+    }
+    
 }
