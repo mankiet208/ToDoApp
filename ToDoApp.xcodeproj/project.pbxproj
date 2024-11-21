@@ -72,6 +72,8 @@
 		396BFC5D2CEDE706003A7CB6 /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */; };
 		396BFC602CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */; };
 		396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */; };
+		396BFC682CEF1D92003A7CB6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC672CEF1D92003A7CB6 /* UserService.swift */; };
+		396BFC6A2CEF1D9E003A7CB6 /* ToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,6 +140,8 @@
 		396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
 		396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepositoryFirestore.swift; sourceTree = "<group>"; };
 		396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryFirestore.swift; sourceTree = "<group>"; };
+		396BFC672CEF1D92003A7CB6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,8 +186,9 @@
 				393DE2E62CE6F13B0038F2B9 /* Extensions */,
 				393DE3192CE6F13B0038F2B9 /* Helper */,
 				393DE3142CE6F13B0038F2B9 /* Models */,
-				396BFC3E2CEB2325003A7CB6 /* Services */,
+				396BFC642CEF1D3A003A7CB6 /* Data */,
 				393DE30A2CE6F13B0038F2B9 /* Repositories */,
+				396BFC3E2CEB2325003A7CB6 /* Services */,
 				393DE2EC2CE6F13B0038F2B9 /* Views */,
 				393DE2DE2CE6F0FC0038F2B9 /* Preview Content */,
 			);
@@ -331,7 +336,8 @@
 		396BFC3E2CEB2325003A7CB6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				396BFC3F2CEB2339003A7CB6 /* Firebase */,
+				396BFC672CEF1D92003A7CB6 /* UserService.swift */,
+				396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -375,6 +381,14 @@
 				396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		396BFC642CEF1D3A003A7CB6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				396BFC3F2CEB2339003A7CB6 /* Firebase */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		39922AF12CE9EF440009ECC1 /* Login */ = {
@@ -526,6 +540,7 @@
 			files = (
 				396BFC492CEB2852003A7CB6 /* FirestoreMethod.swift in Sources */,
 				393DE3312CE6F13C0038F2B9 /* ProfileView.swift in Sources */,
+				396BFC682CEF1D92003A7CB6 /* UserService.swift in Sources */,
 				393DE34F2CE6F13C0038F2B9 /* MainVM.swift in Sources */,
 				393DE3432CE6F13C0038F2B9 /* BaseView.swift in Sources */,
 				393DE33E2CE6F13C0038F2B9 /* MainView.swift in Sources */,
@@ -575,6 +590,7 @@
 				393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */,
 				393DE32D2CE6F13C0038F2B9 /* ColorExtension.swift in Sources */,
 				396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */,
+				396BFC6A2CEF1D9E003A7CB6 /* ToDoService.swift in Sources */,
 				393DE34D2CE6F13C0038F2B9 /* NewItemVM.swift in Sources */,
 				393DE3372CE6F13C0038F2B9 /* HeaderView.swift in Sources */,
 			);

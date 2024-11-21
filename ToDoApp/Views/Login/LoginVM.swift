@@ -7,18 +7,18 @@
 
 import Foundation
 
+@MainActor
 class LoginVM: BaseVM {
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
 
-    private let userRepository: UserRepository
+    private let userService: UserService
     
-    init(userRepository: UserRepository) {
-        self.userRepository = userRepository
+    init(userService: UserService) {
+        self.userService = userService
     }
     
-    @MainActor
     func login() async {
         do {
             guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -31,7 +31,7 @@ class LoginVM: BaseVM {
             
             state = .loading
             
-            try await userRepository.signIn(email: email, password: password)
+            try await userService.signIn(email: email, password: password)
 
             state = .idle
             

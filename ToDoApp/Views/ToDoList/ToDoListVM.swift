@@ -14,15 +14,15 @@ class ToDoListVM: BaseVM {
     @Published var toDoItems = [ToDoItem]()
     
     private let userId: String
-    private let userRepository: UserRepository
-    private let toDoRepository: ToDoRepository
+    private let userService: UserService
+    private let toDoService: ToDoService
     
-    var listener: ListenerRegistration?
+    private var listener: ListenerRegistration?
     
-    init(userId: String, userRepository: UserRepository, toDoRepository: ToDoRepository) {
+    init(userId: String, userService: UserService, toDoService: ToDoService) {
         self.userId = userId
-        self.userRepository = userRepository
-        self.toDoRepository = toDoRepository
+        self.userService = userService
+        self.toDoService = toDoService
     }
     
     deinit {
@@ -33,7 +33,7 @@ class ToDoListVM: BaseVM {
     }
     
     func fetchAndListenToDos() {
-        listener = toDoRepository.fetchAndListenToDos(completion: { [weak self] result in
+        listener = toDoService.fetchAndListenToDos(completion: { [weak self] result in
             switch result {
             case .success(let items):
                 self?.toDoItems = items
@@ -50,7 +50,7 @@ class ToDoListVM: BaseVM {
         
         do {
             let isDone = !toDoItems[index].isDone
-            try await toDoRepository.markAsDone(toDoId: toDoId, isDone: isDone)
+            try await toDoService.markAsDone(toDoId: toDoId, isDone: isDone)
         } catch {
             print(error.localizedDescription)
         }

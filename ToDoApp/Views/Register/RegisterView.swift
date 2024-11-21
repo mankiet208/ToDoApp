@@ -11,8 +11,8 @@ struct RegisterView: View {
     @ObservedObject var viewModel: RegisterVM
     
     static func createInstance() -> RegisterView {
-        let userRepo = UserRepositoryFirestore()
-        let registerVM = RegisterVM(userRepository: userRepo)
+        let userService = UserServiceImp(repository: UserRepositoryFirestore())
+        let registerVM = RegisterVM(userService: userService)
         return RegisterView(viewModel: registerVM)
     }
     

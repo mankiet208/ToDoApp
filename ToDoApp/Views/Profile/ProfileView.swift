@@ -15,8 +15,8 @@ struct ProfileView: View {
     @State private var showAlert = false
     
     static func createInstance() -> ProfileView {
-        let userRepo = UserRepositoryFirestore()
-        let profileVM = ProfileVM(userRepository: userRepo)
+        let userService = UserServiceImp(repository: UserRepositoryFirestore())
+        let profileVM = ProfileVM(userService: userService)
         return ProfileView(viewModel: profileVM)
     }
     

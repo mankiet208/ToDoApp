@@ -9,8 +9,12 @@ import Foundation
 import FirebaseFirestore
 
 protocol ToDoRepository {
-    func fetchAndListenToDos(completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration?
-    func fetchToDos() async throws -> [ToDoItem]
+    func fetchToDos(orderBy: [QueryObject]) async throws -> [ToDoItem]
     func markAsDone(toDoId: String, isDone: Bool) async throws
-    func addNewToDo(todo: ToDoItem) async throws
+    func addNewToDo(toDo: ToDoItem) async throws
+}
+
+protocol ToDoListenerRepository {
+    func fetchAndListenToDos(orderBy: [QueryObject],
+                             completion: @escaping (Result<[ToDoItem], Error>) -> Void) -> ListenerRegistration?
 }

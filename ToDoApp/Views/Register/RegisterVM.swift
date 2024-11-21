@@ -7,19 +7,19 @@
 
 import Foundation
 
+@MainActor
 class RegisterVM: BaseVM {
     @Published var name = ""
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
     
-    private let userRepository: UserRepository
+    private let userService: UserService
     
-    init(userRepository: UserRepository) {
-        self.userRepository = userRepository
+    init(userService: UserService) {
+        self.userService = userService
     }
     
-    @MainActor
     func register() async {
         do {
             guard !email.trimmingCharacters(in: .whitespaces).isEmpty,
@@ -33,7 +33,7 @@ class RegisterVM: BaseVM {
             
             state = .loading
             
-            let uid = try await userRepository.createUser(email: email, password: password)
+            let uid = try await userService.createUser(email: email, password: password)
             
             guard let uid = uid else {
                 // TODO: Handle error
@@ -47,7 +47,7 @@ class RegisterVM: BaseVM {
                 createdAt: Date().timeIntervalSince1970
             )
             
-            try await userRepository.setUser(uid: uid, user: user)
+            try await userService.setUser(uid: uid, user: user)
             
             state = .idle
             
