@@ -13,6 +13,7 @@ protocol ToDoService {
     func fetchToDos() async throws -> [ToDoItem]
     func markAsDone(toDoId: String, isDone: Bool) async throws
     func addNewToDo(toDo: ToDoItem) async throws
+    func deleteToDo(toDoId: String) async throws
 }
 
 struct ToDoServiceImp: ToDoService {
@@ -53,5 +54,9 @@ struct ToDoServiceImp: ToDoService {
     
     func addNewToDo(toDo: ToDoItem) async throws {
         try await toDoRepository.addNewToDo(toDo: toDo)
+    }
+    
+    func deleteToDo(toDoId: String) async throws {
+        try await toDoRepository.deleteToDo(toDoId: toDoId)
     }
 }

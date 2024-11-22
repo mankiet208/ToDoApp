@@ -10,12 +10,13 @@ import SwiftUI
 struct ToDoItemView: View {
     @Binding var toDoItem: ToDoItem
     
-    let onTrailingSwipe: (() -> Void)?
+    let onMarkAsDone: (() -> Void)?
+    let onRemoveToDo: ((String) -> Void)?
     
     var body: some View {
         let fontWeight: Font.Weight = toDoItem.isDone ? .regular : .bold
         let foregroundColor: Color = toDoItem.isDone ? .gray : .black
-        let trailingSwipeText = toDoItem.isDone ? "Unread" : "Read"
+        let isDoneText = toDoItem.isDone ? "Undone" : "Done"
         
         HStack {
             VStack(alignment: .leading) {
@@ -28,11 +29,19 @@ struct ToDoItemView: View {
                     .font(.subheadline)
             }
         }
-        .swipeActions {
-            Button(trailingSwipeText) {
-                onTrailingSwipe?()
+        .swipeActions(edge: .leading) {
+            Button(isDoneText) {
+                onMarkAsDone?()
             }
             .tint(.blue)
+        }
+        .swipeActions(edge: .trailing) {
+            Button(role: .destructive) {
+                onRemoveToDo?(toDoItem.id)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+
         }
     }
 }
@@ -47,6 +56,6 @@ struct ToDoItemView_Previews: PreviewProvider {
     )
     
     static var previews: some View {
-        ToDoItemView(toDoItem: $toDoItem, onTrailingSwipe: nil)
+        ToDoItemView(toDoItem: $toDoItem, onMarkAsDone: nil, onRemoveToDo: nil)
     }
 }

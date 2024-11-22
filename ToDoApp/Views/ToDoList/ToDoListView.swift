@@ -33,6 +33,10 @@ struct ToDoListView: View {
                             Task {
                                 await viewModel.markAsDone(toDoId: item.id)
                             }
+                        } onRemoveToDo: { toDoId in
+                            Task {
+                                await viewModel.deleteToDo(toDoId: toDoId)
+                            }
                         }
                     }
                 }

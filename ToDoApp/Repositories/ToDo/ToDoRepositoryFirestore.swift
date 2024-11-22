@@ -28,6 +28,12 @@ struct ToDoRepositoryFirestore: ToDoRepository {
             ToDoFirestoreEndpoint.addNewToDo(toDo: toDo)
         )
     }
+    
+    func deleteToDo(toDoId: String) async throws {
+        try await FirestoreService.request(
+            ToDoFirestoreEndpoint.deleteToDo(toDoId: toDoId)
+        )
+    }
 }
 
 struct ToDoListenerRepositoryFirestore: ToDoListenerRepository {

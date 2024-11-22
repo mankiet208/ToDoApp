@@ -64,5 +64,13 @@ class ToDoListVM: BaseVM {
             print(error.localizedDescription)
         }
     }
+    
+    func deleteToDo(toDoId: String) async {
+        do {
+            try await toDoService.deleteToDo(toDoId: toDoId)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
 

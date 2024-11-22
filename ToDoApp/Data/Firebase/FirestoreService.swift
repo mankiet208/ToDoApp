@@ -116,11 +116,6 @@ final class FirestoreService: FirestoreServiceProtocol {
                 return
             }
             
-//            guard let documents = snapshot?.documents, !documents.isEmpty else {
-//                completion(.success([]))
-//                return
-//            }
-            
             guard let documents = snapshot?.documents else {
                 completion(.failure(FirestoreServiceError.invalidRequest))
                 return

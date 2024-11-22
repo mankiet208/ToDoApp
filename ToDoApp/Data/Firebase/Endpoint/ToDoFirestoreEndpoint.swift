@@ -13,6 +13,7 @@ enum ToDoFirestoreEndpoint: FirestoreEndpoint {
     case listToDo
     case addNewToDo(toDo: ToDoItem)
     case markAsDone(toDoId: String, isDone: Bool)
+    case deleteToDo(toDoId: String)
     
     var path: FirestoreReference? {
         guard let uid = FirebaseAuthManager.shared.getUserId() else {
@@ -26,6 +27,8 @@ enum ToDoFirestoreEndpoint: FirestoreEndpoint {
             return toDoCollection(uid).document(todo.id)
         case .markAsDone(let toDoId, _):
             return toDoCollection(uid).document(toDoId)
+        case .deleteToDo(let toDoId):
+            return toDoCollection(uid).document(toDoId)
         }
     }
 
@@ -37,6 +40,8 @@ enum ToDoFirestoreEndpoint: FirestoreEndpoint {
             return .post(toDo)
         case .markAsDone(_, let isDone):
             return .put(params: ["isDone": isDone], merge: true)
+        case .deleteToDo(_):
+            return .delete
         }
     }
     

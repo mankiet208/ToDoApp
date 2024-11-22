@@ -12,6 +12,7 @@ protocol ToDoRepository {
     func fetchToDos(orderBy: [QueryObject]) async throws -> [ToDoItem]
     func markAsDone(toDoId: String, isDone: Bool) async throws
     func addNewToDo(toDo: ToDoItem) async throws
+    func deleteToDo(toDoId: String) async throws
 }
 
 protocol ToDoListenerRepository {
