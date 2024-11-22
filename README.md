@@ -2,7 +2,7 @@
 
 ## About
 
-A simple Todo app using `SwiftUI` and `Firebase`.
+A simple Todo app using `SwiftUI`, `MVVM` and `Firebase`.
 
 List             |  Add todo
 :-------------------------:|:-------------------------:
