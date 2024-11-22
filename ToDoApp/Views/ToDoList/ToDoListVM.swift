@@ -43,6 +43,15 @@ class ToDoListVM: BaseVM {
         })
     }
     
+    func fetchToDos() async {
+        do {
+            let toDos = try await toDoService.fetchToDos()
+            self.toDoItems = toDos
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
     func markAsDone(toDoId: String) async {
         guard let index = toDoItems.firstIndex(where: {$0.id == toDoId }) else {
             return

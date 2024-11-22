@@ -74,7 +74,25 @@
 		396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */; };
 		396BFC682CEF1D92003A7CB6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC672CEF1D92003A7CB6 /* UserService.swift */; };
 		396BFC6A2CEF1D9E003A7CB6 /* ToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */; };
+		398C01B52CF06F540087E0FD /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C01B42CF06F540087E0FD /* MockUserService.swift */; };
+		398C01B72CF0708A0087E0FD /* MockToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C01B62CF0708A0087E0FD /* MockToDoService.swift */; };
+		399CF6CC2CEF2EE4000325DF /* ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */; };
+		399CF6D32CEF2F45000325DF /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6D22CEF2F45000325DF /* ToDoListTests.swift */; };
+		399CF6D72CEF2FF5000325DF /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */; };
+		399CF6DA2CEF3127000325DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 399CF6D92CEF3127000325DF /* FirebaseAuth */; };
+		399CF6DC2CEF3127000325DF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 399CF6DB2CEF3127000325DF /* FirebaseFirestore */; };
+		399CF6DE2CEF31B8000325DF /* MockToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		399CF6CD2CEF2EE4000325DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 393DE2CD2CE6F0FB0038F2B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 393DE2D42CE6F0FB0038F2B9;
+			remoteInfo = ToDoApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		393DE2D52CE6F0FB0038F2B9 /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +160,13 @@
 		396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryFirestore.swift; sourceTree = "<group>"; };
 		396BFC672CEF1D92003A7CB6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoService.swift; sourceTree = "<group>"; };
+		398C01B42CF06F540087E0FD /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
+		398C01B62CF0708A0087E0FD /* MockToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDoService.swift; sourceTree = "<group>"; };
+		399CF6C92CEF2EE4000325DF /* ToDoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppTests.swift; sourceTree = "<group>"; };
+		399CF6D22CEF2F45000325DF /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
+		399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +180,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		399CF6C62CEF2EE4000325DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399CF6DA2CEF3127000325DF /* FirebaseAuth in Frameworks */,
+				399CF6DC2CEF3127000325DF /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -162,7 +196,9 @@
 			isa = PBXGroup;
 			children = (
 				393DE2D72CE6F0FB0038F2B9 /* ToDoApp */,
+				399CF6CA2CEF2EE4000325DF /* ToDoAppTests */,
 				393DE2D62CE6F0FB0038F2B9 /* Products */,
+				399CF6D82CEF3127000325DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				393DE2D52CE6F0FB0038F2B9 /* ToDoApp.app */,
+				399CF6C92CEF2EE4000325DF /* ToDoAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,6 +428,24 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		398C01B22CF06F300087E0FD /* User */ = {
+			isa = PBXGroup;
+			children = (
+				399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */,
+				398C01B42CF06F540087E0FD /* MockUserService.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		398C01B32CF06F370087E0FD /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */,
+				398C01B62CF0708A0087E0FD /* MockToDoService.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
 		39922AF12CE9EF440009ECC1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +508,40 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		399CF6CA2CEF2EE4000325DF /* ToDoAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				399CF6D42CEF2F9E000325DF /* Mocks */,
+				399CF6D52CEF2FAA000325DF /* Tests */,
+				399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */,
+				399CF6D22CEF2F45000325DF /* ToDoListTests.swift */,
+			);
+			path = ToDoAppTests;
+			sourceTree = "<group>";
+		};
+		399CF6D42CEF2F9E000325DF /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				398C01B22CF06F300087E0FD /* User */,
+				398C01B32CF06F370087E0FD /* ToDo */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		399CF6D52CEF2FAA000325DF /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		399CF6D82CEF3127000325DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,6 +567,28 @@
 			productReference = 393DE2D52CE6F0FB0038F2B9 /* ToDoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		399CF6C82CEF2EE4000325DF /* ToDoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 399CF6D12CEF2EE4000325DF /* Build configuration list for PBXNativeTarget "ToDoAppTests" */;
+			buildPhases = (
+				399CF6C52CEF2EE4000325DF /* Sources */,
+				399CF6C62CEF2EE4000325DF /* Frameworks */,
+				399CF6C72CEF2EE4000325DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				399CF6CE2CEF2EE4000325DF /* PBXTargetDependency */,
+			);
+			name = ToDoAppTests;
+			packageProductDependencies = (
+				399CF6D92CEF3127000325DF /* FirebaseAuth */,
+				399CF6DB2CEF3127000325DF /* FirebaseFirestore */,
+			);
+			productName = ToDoAppTests;
+			productReference = 399CF6C92CEF2EE4000325DF /* ToDoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -490,6 +601,10 @@
 				TargetAttributes = {
 					393DE2D42CE6F0FB0038F2B9 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					399CF6C82CEF2EE4000325DF = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 393DE2D42CE6F0FB0038F2B9;
 					};
 				};
 			};
@@ -510,6 +625,7 @@
 			projectRoot = "";
 			targets = (
 				393DE2D42CE6F0FB0038F2B9 /* ToDoApp */,
+				399CF6C82CEF2EE4000325DF /* ToDoAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -528,6 +644,13 @@
 				396BFC542CEC7ABA003A7CB6 /* GoogleService-Info.plist in Resources */,
 				393DE35D2CE6F13C0038F2B9 /* Roboto-Light.ttf in Resources */,
 				393DE2DD2CE6F0FC0038F2B9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		399CF6C72CEF2EE4000325DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +719,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		399CF6C52CEF2EE4000325DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399CF6D72CEF2FF5000325DF /* MockUserRepository.swift in Sources */,
+				399CF6CC2CEF2EE4000325DF /* ToDoAppTests.swift in Sources */,
+				399CF6D32CEF2F45000325DF /* ToDoListTests.swift in Sources */,
+				399CF6DE2CEF31B8000325DF /* MockToDoRepository.swift in Sources */,
+				398C01B52CF06F540087E0FD /* MockUserService.swift in Sources */,
+				398C01B72CF0708A0087E0FD /* MockToDoService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		399CF6CE2CEF2EE4000325DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 393DE2D42CE6F0FB0038F2B9 /* ToDoApp */;
+			targetProxy = 399CF6CD2CEF2EE4000325DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		393DE2E12CE6F0FC0038F2B9 /* Debug */ = {
@@ -781,6 +925,48 @@
 			};
 			name = Release;
 		};
+		399CF6CF2CEF2EE4000325DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9SJEKMM3C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kiettruong.ToDoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ToDoApp";
+			};
+			name = Debug;
+		};
+		399CF6D02CEF2EE4000325DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9SJEKMM3C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kiettruong.ToDoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ToDoApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -798,6 +984,15 @@
 			buildConfigurations = (
 				393DE2E42CE6F0FC0038F2B9 /* Debug */,
 				393DE2E52CE6F0FC0038F2B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		399CF6D12CEF2EE4000325DF /* Build configuration list for PBXNativeTarget "ToDoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				399CF6CF2CEF2EE4000325DF /* Debug */,
+				399CF6D02CEF2EE4000325DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -830,6 +1025,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 396BFC552CEC8B7A003A7CB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		399CF6D92CEF3127000325DF /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BFC552CEC8B7A003A7CB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		399CF6DB2CEF3127000325DF /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 396BFC552CEC8B7A003A7CB6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
