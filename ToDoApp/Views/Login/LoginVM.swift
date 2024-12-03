@@ -13,10 +13,10 @@ class LoginVM: BaseVM {
     @Published var password = ""
     @Published var errorMessage = ""
 
-    private let userService: UserService
+    private let userRepo: UserRepository
     
-    init(userService: UserService) {
-        self.userService = userService
+    init(userRepo: UserRepository) {
+        self.userRepo = userRepo
     }
     
     func login() async {
@@ -31,7 +31,7 @@ class LoginVM: BaseVM {
             
             state = .loading
             
-            try await userService.signIn(email: email, password: password)
+            try await userRepo.signIn(email: email, password: password)
 
             state = .idle
             

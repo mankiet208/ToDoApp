@@ -10,18 +10,20 @@ import Foundation
 
 final class MockUserRepository: UserRepository {
     
+    var user: User? = nil
+    
     func getUserId() -> String? {
-        return "USER_ID"
+        return user?.id
     }
     
     func getUser(uid: String) async throws -> User? {
-        return nil
+        return user
     }
     
     func setUser(uid: String, user: User) async throws {}
     
     func createUser(email: String, password: String) async throws -> String? {
-        return "USER_ID"
+        return user?.id
     }
     
     func signIn(email: String, password: String) async throws {}

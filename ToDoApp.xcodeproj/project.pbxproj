@@ -72,16 +72,14 @@
 		396BFC5D2CEDE706003A7CB6 /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */; };
 		396BFC602CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */; };
 		396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */; };
-		396BFC682CEF1D92003A7CB6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC672CEF1D92003A7CB6 /* UserService.swift */; };
-		396BFC6A2CEF1D9E003A7CB6 /* ToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */; };
-		398C01B52CF06F540087E0FD /* MockUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C01B42CF06F540087E0FD /* MockUserService.swift */; };
-		398C01B72CF0708A0087E0FD /* MockToDoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398C01B62CF0708A0087E0FD /* MockToDoService.swift */; };
 		399CF6CC2CEF2EE4000325DF /* ToDoAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */; };
 		399CF6D32CEF2F45000325DF /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6D22CEF2F45000325DF /* ToDoListTests.swift */; };
 		399CF6D72CEF2FF5000325DF /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */; };
 		399CF6DA2CEF3127000325DF /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 399CF6D92CEF3127000325DF /* FirebaseAuth */; };
 		399CF6DC2CEF3127000325DF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 399CF6DB2CEF3127000325DF /* FirebaseFirestore */; };
 		399CF6DE2CEF31B8000325DF /* MockToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */; };
+		39F856222CFEFA2700FD42C1 /* MockToDoListenerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F856212CFEFA2700FD42C1 /* MockToDoListenerRepository.swift */; };
+		39F856242CFF026100FD42C1 /* AddNewToDoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F856232CFF026100FD42C1 /* AddNewToDoTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,15 +156,13 @@
 		396BFC5C2CEDE706003A7CB6 /* QueryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
 		396BFC5F2CEEE4D7003A7CB6 /* ToDoRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoRepositoryFirestore.swift; sourceTree = "<group>"; };
 		396BFC622CEEEE83003A7CB6 /* UserRepositoryFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryFirestore.swift; sourceTree = "<group>"; };
-		396BFC672CEF1D92003A7CB6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoService.swift; sourceTree = "<group>"; };
-		398C01B42CF06F540087E0FD /* MockUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserService.swift; sourceTree = "<group>"; };
-		398C01B62CF0708A0087E0FD /* MockToDoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDoService.swift; sourceTree = "<group>"; };
 		399CF6C92CEF2EE4000325DF /* ToDoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppTests.swift; sourceTree = "<group>"; };
 		399CF6D22CEF2F45000325DF /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
 		399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDoRepository.swift; sourceTree = "<group>"; };
+		39F856212CFEFA2700FD42C1 /* MockToDoListenerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockToDoListenerRepository.swift; sourceTree = "<group>"; };
+		39F856232CFF026100FD42C1 /* AddNewToDoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewToDoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +221,6 @@
 				393DE3142CE6F13B0038F2B9 /* Models */,
 				396BFC642CEF1D3A003A7CB6 /* Data */,
 				393DE30A2CE6F13B0038F2B9 /* Repositories */,
-				396BFC3E2CEB2325003A7CB6 /* Services */,
 				393DE2EC2CE6F13B0038F2B9 /* Views */,
 				393DE2DE2CE6F0FC0038F2B9 /* Preview Content */,
 			);
@@ -370,15 +365,6 @@
 			path = DI;
 			sourceTree = "<group>";
 		};
-		396BFC3E2CEB2325003A7CB6 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				396BFC672CEF1D92003A7CB6 /* UserService.swift */,
-				396BFC692CEF1D9E003A7CB6 /* ToDoService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		396BFC3F2CEB2339003A7CB6 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +418,6 @@
 			isa = PBXGroup;
 			children = (
 				399CF6D62CEF2FF5000325DF /* MockUserRepository.swift */,
-				398C01B42CF06F540087E0FD /* MockUserService.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -441,7 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				399CF6DD2CEF31B8000325DF /* MockToDoRepository.swift */,
-				398C01B62CF0708A0087E0FD /* MockToDoService.swift */,
+				39F856212CFEFA2700FD42C1 /* MockToDoListenerRepository.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -511,10 +496,9 @@
 		399CF6CA2CEF2EE4000325DF /* ToDoAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */,
 				399CF6D42CEF2F9E000325DF /* Mocks */,
 				399CF6D52CEF2FAA000325DF /* Tests */,
-				399CF6CB2CEF2EE4000325DF /* ToDoAppTests.swift */,
-				399CF6D22CEF2F45000325DF /* ToDoListTests.swift */,
 			);
 			path = ToDoAppTests;
 			sourceTree = "<group>";
@@ -531,6 +515,8 @@
 		399CF6D52CEF2FAA000325DF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				399CF6D22CEF2F45000325DF /* ToDoListTests.swift */,
+				39F856232CFF026100FD42C1 /* AddNewToDoTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -663,7 +649,6 @@
 			files = (
 				396BFC492CEB2852003A7CB6 /* FirestoreMethod.swift in Sources */,
 				393DE3312CE6F13C0038F2B9 /* ProfileView.swift in Sources */,
-				396BFC682CEF1D92003A7CB6 /* UserService.swift in Sources */,
 				393DE34F2CE6F13C0038F2B9 /* MainVM.swift in Sources */,
 				393DE3432CE6F13C0038F2B9 /* BaseView.swift in Sources */,
 				393DE33E2CE6F13C0038F2B9 /* MainView.swift in Sources */,
@@ -713,7 +698,6 @@
 				393DE3422CE6F13C0038F2B9 /* BaseTabItem.swift in Sources */,
 				393DE32D2CE6F13C0038F2B9 /* ColorExtension.swift in Sources */,
 				396BFC632CEEEE83003A7CB6 /* UserRepositoryFirestore.swift in Sources */,
-				396BFC6A2CEF1D9E003A7CB6 /* ToDoService.swift in Sources */,
 				393DE34D2CE6F13C0038F2B9 /* NewItemVM.swift in Sources */,
 				393DE3372CE6F13C0038F2B9 /* HeaderView.swift in Sources */,
 			);
@@ -724,11 +708,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				399CF6D72CEF2FF5000325DF /* MockUserRepository.swift in Sources */,
+				39F856222CFEFA2700FD42C1 /* MockToDoListenerRepository.swift in Sources */,
 				399CF6CC2CEF2EE4000325DF /* ToDoAppTests.swift in Sources */,
 				399CF6D32CEF2F45000325DF /* ToDoListTests.swift in Sources */,
+				39F856242CFF026100FD42C1 /* AddNewToDoTests.swift in Sources */,
 				399CF6DE2CEF31B8000325DF /* MockToDoRepository.swift in Sources */,
-				398C01B52CF06F540087E0FD /* MockUserService.swift in Sources */,
-				398C01B72CF0708A0087E0FD /* MockToDoService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

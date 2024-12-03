@@ -8,15 +8,15 @@
 import Foundation
 
 class ProfileVM: BaseVM {
-    private let userService: UserService
+    private let userRepo: UserRepository
     
-    init(userService: UserService) {
-        self.userService = userService
+    init(userRepo: UserRepository) {
+        self.userRepo = userRepo
     }
     
     func logOut() {
         do {
-            try userService.signOut()
+            try userRepo.signOut()
         } catch {
             print(error.localizedDescription)
         }

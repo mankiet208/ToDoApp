@@ -14,10 +14,10 @@ class RegisterVM: BaseVM {
     @Published var password = ""
     @Published var errorMessage = ""
     
-    private let userService: UserService
+    private let userRepo: UserRepository
     
-    init(userService: UserService) {
-        self.userService = userService
+    init(userRepo: UserRepository) {
+        self.userRepo = userRepo
     }
     
     func register() async {
@@ -33,7 +33,7 @@ class RegisterVM: BaseVM {
             
             state = .loading
             
-            let uid = try await userService.createUser(email: email, password: password)
+            let uid = try await userRepo.createUser(email: email, password: password)
             
             guard let uid = uid else {
                 // TODO: Handle error
@@ -47,7 +47,7 @@ class RegisterVM: BaseVM {
                 createdAt: Date().timeIntervalSince1970
             )
             
-            try await userService.setUser(uid: uid, user: user)
+            try await userRepo.setUser(uid: uid, user: user)
             
             state = .idle
             

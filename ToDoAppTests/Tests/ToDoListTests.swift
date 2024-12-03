@@ -14,17 +14,42 @@ final class ToDoListTests: XCTestCase {
     func test_fetchToDos_success() async throws {
         // Given
         let mockToDoRepository = MockToDoRepository()
-        mockToDoRepository.resultToDos = Constants.toDos
+        mockToDoRepository.toDos = Constants.toDos
         
-        let userService = UserServiceImp(repository: UserRepositoryFirestore())
-        let toDoService = ToDoServiceImp(toDoRepository: mockToDoRepository, toDoListenRepository: ToDoListenerRepositoryFirestore())
-        let viewModel = ToDoListVM(userId: "USER_ID", userService: userService, toDoService: toDoService)
+        let viewModel = ToDoListVM(
+            userId: "USER_ID",
+            userRepo: MockUserRepository(),
+            toDoRepo: mockToDoRepository,
+            toDoListenerRepo: MockToDoListenerRepository()
+        )
         
         // When
         await viewModel.fetchToDos()
         
         // Then
         XCTAssertEqual(viewModel.toDoItems.count, 3)
+    }
+    
+    @MainActor
+    func test_markAsDone_success() async throws {
+        // Given
+        let mockToDoRepository = MockToDoRepository()
+        mockToDoRepository.toDos = Constants.toDos
+        
+        let viewModel = ToDoListVM(
+            userId: "USER_ID",
+            userRepo: MockUserRepository(),
+            toDoRepo: mockToDoRepository,
+            toDoListenerRepo: MockToDoListenerRepository()
+        )
+        
+        // When
+        await viewModel.fetchToDos()
+        await viewModel.markAsDone(toDoId: "todo_1")
+        await viewModel.fetchToDos()
+        
+        // Then
+        XCTAssertEqual(viewModel.toDoItems[0].isDone, true)
     }
 }
 
@@ -43,14 +68,14 @@ extension ToDoListTests {
                 title: "Task 2",
                 dueDate: Date().timeIntervalSince1970,
                 createDate: Date().timeIntervalSince1970,
-                isDone: false
+                isDone: true
             ),
             ToDoItem(
                 id: "todo_3",
                 title: "Task 3",
                 dueDate: Date().timeIntervalSince1970,
                 createDate: Date().timeIntervalSince1970,
-                isDone: false
+                isDone: true
             )
         ]
     }

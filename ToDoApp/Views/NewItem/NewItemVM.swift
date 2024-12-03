@@ -15,12 +15,12 @@ class NewItemVM: BaseVM {
     @Published var dueDate = Date()
     @MainActor @Published var showAlert = false
     
-    private let userService: UserService
-    private let toDoService: ToDoService
+    private let userRepo: UserRepository
+    private let toDoRepo: ToDoRepository
     
-    init(userService: UserService, toDoService: ToDoService) {
-        self.userService = userService
-        self.toDoService = toDoService
+    init(userRepo: UserRepository, toDoRepo: ToDoRepository) {
+        self.userRepo = userRepo
+        self.toDoRepo = toDoRepo
     }
     
     var canCreate: Bool {
@@ -51,7 +51,7 @@ class NewItemVM: BaseVM {
                 createDate: Date().timeIntervalSince1970,
                 isDone: false
             )
-            try await toDoService.addNewToDo(toDo: newToDo)
+            try await toDoRepo.addNewToDo(toDo: newToDo)
             
             return newToDo
         } catch {

@@ -9,14 +9,24 @@ import Foundation
 @testable import ToDoApp
 
 final class MockToDoRepository: ToDoRepository {
-    
-    var resultToDos: [ToDoItem] = []
+   
+    var toDos: [ToDoItem] = []
 
     func fetchToDos(orderBy: [QueryObject]) async throws -> [ToDoItem] {
-        return resultToDos
+        return toDos
     }
     
-    func markAsDone(toDoId: String, isDone: Bool) async throws {}
+    func markAsDone(toDoId: String, isDone: Bool) async throws {
+        if let row = toDos.firstIndex(where: {$0.id == toDoId}) {
+            toDos[row].isDone = isDone
+        }
+    }
     
-    func addNewToDo(toDo: ToDoApp.ToDoItem) async throws {}
+    func addNewToDo(toDo: ToDoItem) async throws {
+        toDos.append(toDo)
+    }
+    
+    func deleteToDo(toDoId: String) async throws {
+        toDos.removeAll(where: { $0.id == toDoId })
+    }
 }
